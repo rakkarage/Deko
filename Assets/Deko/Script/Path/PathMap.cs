@@ -7,8 +7,11 @@ namespace ca.HenrySoftware.Rage
 	{
 		public PathTiles Tiles;
 		public Tilemap BackMap;
+		public Tilemap WaterBackMap;
 		public Tilemap ItemBackMap;
+		public Tilemap WaterForeMap;
 		public Tilemap ForeMap;
+		public Tilemap ItemForeMap;
 		public Tilemap LightMap;
 		public BoundsInt Bounds => BackMap.cellBounds;
 		public int Height => Bounds.size.y;

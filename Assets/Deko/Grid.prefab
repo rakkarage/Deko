@@ -94,6 +94,7 @@ TilemapRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -830,6 +831,7 @@ TilemapRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -861,6 +863,7 @@ GameObject:
   - component: {fileID: 5419054624057931779}
   - component: {fileID: 5419054624057931778}
   - component: {fileID: 5419054624057931777}
+  - component: {fileID: 1151155462}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -910,16 +913,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 5419054624057931776}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: e9825249e73fa0446a7360474e5250c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Tiles: {fileID: 11400000, guid: db735a5d7db40824694f9dad482b330e, type: 2}
   BackMap: {fileID: 5419054625246694405}
+  WaterBackMap: {fileID: 5419054624888188004}
   ItemBackMap: {fileID: 5419054624231599190}
+  WaterForeMap: {fileID: 5419054624204786833}
   ForeMap: {fileID: 5419054624029843164}
+  ItemForeMap: {fileID: 5419054624347936696}
   LightMap: {fileID: 5662729088681070825}
   LightRadius: 10
   TorchRadius: 5
+--- !u!114 &1151155462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5419054624057931776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: a61848e86c2bbbe2fb287cf8317e9bde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: {fileID: 11400000, guid: 7a8e614a252f7b44fb504e01ac687583, type: 2}
 --- !u!1 &5419054624204786846
 GameObject:
   m_ObjectHideFlags: 0
@@ -1746,6 +1767,7 @@ TilemapRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2220,6 +2242,7 @@ TilemapRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2422,6 +2445,7 @@ TilemapRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3268,6 +3292,7 @@ TilemapRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -7156,6 +7181,7 @@ TilemapRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
