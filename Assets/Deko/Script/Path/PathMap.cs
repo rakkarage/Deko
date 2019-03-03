@@ -26,21 +26,25 @@ namespace ca.HenrySoftware.Rage
 		public bool InsideMap(Vector2Int p) => InsideMap(p.x, p.y);
 		public bool InsideMap(int x, int y, int edge = 0) =>
 			(x >= 0 + edge) && (y >= 0 + edge) && (x < Width - edge) && (y < Height - edge);
-		public bool IsFloor(int x, int y) => IsFloor(new Vector3Int(x, y, 0));
-		public bool IsFloor(Vector2Int p) => IsFloor(p.Vector3Int());
+		public bool IsFloorRoom(int x, int y) => IsFloorRoom(new Vector3Int(x, y, 0));
+		public bool IsFloorRoom(Vector2Int p) => IsFloorRoom(p.Vector3Int());
+		public bool IsFloorRoom(Vector3Int p) => Tiles.RoomFloor.Contains(BackMap.GetTile(p));
+		public TileBase RandomRoomFloor => Tiles.RoomFloor[Utility.Random.Next(Tiles.RoomFloor.Count)];
 		public bool IsFloor(Vector3Int p) => Tiles.Floor.Contains(BackMap.GetTile(p));
+		public TileBase RandomFloor => Tiles.Floor[Utility.Random.Next(Tiles.Floor.Count)];
 		public bool IsWall(int x, int y) => IsWall(new Vector3Int(x, y, 0));
 		public bool IsWall(Vector2Int p) => IsWall(p.Vector3Int());
 		public bool IsWall(Vector3Int p) => Tiles.Wall.Contains(ForeMap.GetTile(p));
+		public TileBase RandomWall => Tiles.Wall[Utility.Random.Next(Tiles.Wall.Count)];
 		public bool IsStairs(int x, int y) => IsStairs(new Vector3Int(x, y, 0));
 		public bool IsStairs(Vector2Int p) => IsStairs(p.Vector3Int());
 		public bool IsStairs(Vector3Int p) => IsStairsUp(p) || IsStairsDown(p);
 		public bool IsStairsUp(int x, int y) => IsStairsUp(new Vector3Int(x, y, 0));
 		public bool IsStairsUp(Vector2Int p) => IsStairsUp(p.Vector3Int());
-		public bool IsStairsUp(Vector3Int p) => Tiles.StairsUp.Contains(ForeMap.GetTile(p));
+		public bool IsStairsUp(Vector3Int p) => ForeMap.GetTile(p) == Tiles.StairsUp;
 		public bool IsStairsDown(int x, int y) => IsStairsDown(new Vector3Int(x, y, 0));
 		public bool IsStairsDown(Vector2Int p) => IsStairsDown(p.Vector3Int());
-		public bool IsStairsDown(Vector3Int p) => Tiles.StairsDown.Contains(ForeMap.GetTile(p));
+		public bool IsStairsDown(Vector3Int p) => ForeMap.GetTile(p) == Tiles.StairsDown;
 		public bool IsDoor(int x, int y) => IsDoor(new Vector3Int(x, y, 0));
 		public bool IsDoor(Vector2Int p) => IsDoor(p.Vector3Int());
 		public bool IsDoor(Vector3Int p) => IsDoorOpen(p) || IsDoorShut(p);
@@ -228,7 +232,7 @@ namespace ca.HenrySoftware.Rage
 		public void FindTorches()
 		{
 			foreach (var p in ForeMap.cellBounds.allPositionsWithin)
-				if (Tiles.Torches.Contains(ForeMap.GetTile(p)))
+				if (ForeMap.GetTile(p) == Tiles.Torch)
 					_torches.Add(p);
 		}
 		private int RandomTorchRadius => Utility.Random.Next(TorchRadius) + 1;

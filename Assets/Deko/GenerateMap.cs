@@ -23,6 +23,14 @@ public class GenerateMap : MonoBehaviour
 	public void Generate()
 	{
 		Clear();
+		for (var y = 0; y < Type.Height; y++)
+		{
+			for (var x = 0; x < Type.Width; x++)
+			{
+				var p = new Vector3Int(x, y, 1);
+				_pathMap.BackMap.SetTile(p, _pathMap.RandomFloor);
+			}
+		}
 	}
 	[ContextMenu("Clear")]
 	public void Clear()

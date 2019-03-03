@@ -15,42 +15,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DoorOpen: {fileID: 11400000, guid: 62c9fe8921488454a8dee9d89f34a42a, type: 2}
   DoorShut: {fileID: 11400000, guid: ee0f378ad33fe494ea8f79f353f9ef42, type: 2}
-  StairsDown:
-  - {fileID: 11400000, guid: de5d507f54c9b174385525b7abad4b6b, type: 2}
-  - {fileID: 11400000, guid: 42d11298858ffa74eb846c7ab85e8d2d, type: 2}
-  StairsUp:
-  - {fileID: 11400000, guid: c6d067843b956b64ea049b18b6345779, type: 2}
-  - {fileID: 11400000, guid: ebeaccfb26dc1064a81d3f26ca71131f, type: 2}
+  StairsDown: {fileID: 11400000, guid: de5d507f54c9b174385525b7abad4b6b, type: 2}
+  StairsUp: {fileID: 11400000, guid: c6d067843b956b64ea049b18b6345779, type: 2}
+  Torch: {fileID: 11400000, guid: 7e676ba73b7efc546aacd39e93c8619a, type: 2}
   Wall:
-  - {fileID: 11400000, guid: 17767ea69cabe6643944a4660272bfad, type: 2}
-  - {fileID: 11400000, guid: 967e6ade8abc69c459612aaa20d379e7, type: 2}
-  - {fileID: 11400000, guid: 74840fe828f7ea9458d54018e1489bf2, type: 2}
-  - {fileID: 11400000, guid: ce2cc644083e6684ca684166c2e96cf5, type: 2}
-  - {fileID: 11400000, guid: 0157333278cc51a498754f910e08ab54, type: 2}
-  - {fileID: 11400000, guid: a0c953bbff3347b45940643a99b1d01b, type: 2}
-  - {fileID: 11400000, guid: 53094b92609fe754bb6689830cc94282, type: 2}
-  - {fileID: 11400000, guid: 3e43167796147ad45a6011656bcb3c11, type: 2}
-  - {fileID: 11400000, guid: dfa48191ddacc3e408ed6f35934a4bda, type: 2}
-  - {fileID: 11400000, guid: b089fe2613fe7f942886f165489f6f99, type: 2}
-  - {fileID: 11400000, guid: fdbb09c39d6a21542a46eff864866493, type: 2}
-  - {fileID: 11400000, guid: 02fb455ee7e6c6548978cdbcb7f2b123, type: 2}
-  - {fileID: 11400000, guid: 11ed428a6cf18af4b82a67a229d18e83, type: 2}
   - {fileID: 11400000, guid: 43bc680d6acea1749a07f5b9c154ac19, type: 2}
-  - {fileID: 11400000, guid: 7e676ba73b7efc546aacd39e93c8619a, type: 2}
+  - {fileID: 11400000, guid: 11ed428a6cf18af4b82a67a229d18e83, type: 2}
   Floor:
-  - {fileID: 11400000, guid: 00525f509c6d18944ac9c23b94e10e33, type: 2}
-  - {fileID: 11400000, guid: fe289a76b96b2cd4c852aae5bd901b03, type: 2}
-  - {fileID: 11400000, guid: ca7d4a134c3038844a9b32c64c5e73c0, type: 2}
-  - {fileID: 11400000, guid: 4f2e6f8e0a132ee45a59c3d86a1d153c, type: 2}
-  - {fileID: 11400000, guid: b0de3f4ec4f009641a697215100a68bc, type: 2}
-  - {fileID: 11400000, guid: 5eeec5acf729e1448844e734e3120edb, type: 2}
-  - {fileID: 11400000, guid: 7decd5ae9b9930647900fa9a230e32a6, type: 2}
-  - {fileID: 11400000, guid: aa372b7ba75f0284b94e81d6c962ec6c, type: 2}
-  - {fileID: 11400000, guid: d819ff9a3e0d67a42bb2d5198dcb4d18, type: 2}
-  - {fileID: 11400000, guid: f4d21f418ab710f41b75056f5e935fcd, type: 2}
-  - {fileID: 11400000, guid: 026729e71c0a4694d9476352c24a2212, type: 2}
-  - {fileID: 11400000, guid: ae661b9e20417694b812b7beea79042f, type: 2}
   - {fileID: 11400000, guid: f3119f26ba6b66642b7268df71ed28e9, type: 2}
+  - {fileID: 11400000, guid: bad9226da01dae942872bfa608d6e2e0, type: 2}
+  RoomFloor:
   - {fileID: 11400000, guid: bad9226da01dae942872bfa608d6e2e0, type: 2}
   Light:
   - {fileID: 11400000, guid: d8b037bc1d9c98a4890857e6df5cb67c, type: 2}
@@ -85,9 +59,3 @@ MonoBehaviour:
   - {fileID: 11400000, guid: aeb460e30f3bd7841a1b880d46548a46, type: 2}
   - {fileID: 11400000, guid: 221211dd8a3acb947ad1397cfc3b6c8a, type: 2}
   - {fileID: 11400000, guid: 17c428be8285f1242bb32dd4adc87280, type: 2}
-  Torches:
-  - {fileID: 11400000, guid: dfa48191ddacc3e408ed6f35934a4bda, type: 2}
-  - {fileID: 11400000, guid: b089fe2613fe7f942886f165489f6f99, type: 2}
-  - {fileID: 11400000, guid: fdbb09c39d6a21542a46eff864866493, type: 2}
-  - {fileID: 11400000, guid: 02fb455ee7e6c6548978cdbcb7f2b123, type: 2}
-  - {fileID: 11400000, guid: 7e676ba73b7efc546aacd39e93c8619a, type: 2}
