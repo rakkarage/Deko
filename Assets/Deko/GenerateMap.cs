@@ -27,17 +27,16 @@ public class GenerateMap : MonoBehaviour
 			for (var x = 0; x < Type.Width; x++)
 				_pathMap.SetRandomFloor(x, y);
 	}
-}
-[ContextMenu("Clear")]
-public void Clear()
-{
-	Debug.Log(_layers.Count);
-	foreach (var i in _layers)
+	[ContextMenu("Clear")]
+	public void Clear()
 	{
-		i.ClearAllTiles();
-		i.size = new Vector3Int(Type.Width, Type.Height, 1);
-		i.ResizeBounds();
-		i.RefreshAllTiles();
+		Debug.Log(_layers.Count);
+		foreach (var i in _layers)
+		{
+			i.ClearAllTiles();
+			i.size = new Vector3Int(Type.Width, Type.Height, 1);
+			i.ResizeBounds();
+			i.RefreshAllTiles();
+		}
 	}
-}
 }
