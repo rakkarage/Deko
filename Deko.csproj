@@ -57,8 +57,6 @@
   <ItemGroup>
      <Compile Include="Assets\Deko\GenerateMap.cs" />
      <Compile Include="Assets\Deko\GenerateMapType.cs" />
-     <Compile Include="Assets\Deko\Loot.cs" />
-     <Compile Include="Assets\Deko\Mob.cs" />
      <Compile Include="Assets\Deko\Script\AnimatedTile.cs" />
      <Compile Include="Assets\Deko\Script\Editor\CoordinateBrush.cs" />
      <Compile Include="Assets\Deko\Script\Editor\GridBrushInspector.cs" />
@@ -91,7 +89,6 @@
      <Compile Include="Assets\Deko\Script\RandomTile.cs" />
      <Compile Include="Assets\Deko\Script\RandomTileData.cs" />
      <Compile Include="Assets\Deko\Script\TileOrientation.cs" />
-     <Compile Include="Assets\Deko\So\Player.cs" />
      <None Include="Assets\Deko\Visual\Additive.shader" />
  <Reference Include="UnityEngine.AIModule">
  <HintPath>/home/rakka/Unity/Hub/Editor/2019.2.0a4/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
