@@ -24,24 +24,20 @@ public class GenerateMap : MonoBehaviour
 	{
 		Clear();
 		for (var y = 0; y < Type.Height; y++)
-		{
 			for (var x = 0; x < Type.Width; x++)
-			{
-				var p = new Vector3Int(x, y, 1);
-				_pathMap.BackMap.SetTile(p, _pathMap.RandomFloor);
-			}
-		}
+				_pathMap.SetRandomFloor(x, y);
 	}
-	[ContextMenu("Clear")]
-	public void Clear()
+}
+[ContextMenu("Clear")]
+public void Clear()
+{
+	Debug.Log(_layers.Count);
+	foreach (var i in _layers)
 	{
-		Debug.Log(_layers.Count);
-		foreach (var i in _layers)
-		{
-			i.ClearAllTiles();
-			i.size = new Vector3Int(Type.Width, Type.Height, 1);
-			i.ResizeBounds();
-			i.RefreshAllTiles();
-		}
+		i.ClearAllTiles();
+		i.size = new Vector3Int(Type.Width, Type.Height, 1);
+		i.ResizeBounds();
+		i.RefreshAllTiles();
 	}
+}
 }
