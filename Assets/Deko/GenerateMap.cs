@@ -1,10 +1,14 @@
 using ca.HenrySoftware.Rage;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 [ExecuteInEditMode]
 public class GenerateMap : MonoBehaviour
 {
+	public List<KeyValuePair<int, string>> Dictionary0;
+	public Dictionary<int, string> Dictionary1;
 	public GenerateMapType Type;
 	private List<Tilemap> _layers = new List<Tilemap>();
 	private PathMap _pathMap;

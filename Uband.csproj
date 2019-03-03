@@ -660,14 +660,6 @@
       <Project>{542DAA75-4271-00B3-82FD-F4661AD63860}</Project>
       <Name>ReorderableInspector</Name>
     </ProjectReference>
-    <ProjectReference Include="UnityAtoms.csproj">
-      <Project>{9384D54B-46A2-AB16-38BD-DC048F508CC1}</Project>
-      <Name>UnityAtoms</Name>
-    </ProjectReference>
-    <ProjectReference Include="Gename.csproj">
-      <Project>{3668205B-5DE7-D4D4-220E-775C11A9FBA6}</Project>
-      <Name>Gename</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
