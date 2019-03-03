@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityAtoms", "UnityAtoms.csproj", "{9384D54B-46A2-AB16-38BD-DC048F508CC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uband", "Uband.csproj", "{B2200A2B-87AE-8022-5100-39D8156EE423}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReorderableInspector", "ReorderableInspector.csproj", "{542DAA75-4271-00B3-82FD-F4661AD63860}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gename", "Gename.csproj", "{3668205B-5DE7-D4D4-220E-775C11A9FBA6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9384D54B-46A2-AB16-38BD-DC048F508CC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9384D54B-46A2-AB16-38BD-DC048F508CC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9384D54B-46A2-AB16-38BD-DC048F508CC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9384D54B-46A2-AB16-38BD-DC048F508CC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2200A2B-87AE-8022-5100-39D8156EE423}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2200A2B-87AE-8022-5100-39D8156EE423}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2200A2B-87AE-8022-5100-39D8156EE423}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2200A2B-87AE-8022-5100-39D8156EE423}.Release|Any CPU.Build.0 = Release|Any CPU
+		{542DAA75-4271-00B3-82FD-F4661AD63860}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{542DAA75-4271-00B3-82FD-F4661AD63860}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{542DAA75-4271-00B3-82FD-F4661AD63860}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{542DAA75-4271-00B3-82FD-F4661AD63860}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3668205B-5DE7-D4D4-220E-775C11A9FBA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3668205B-5DE7-D4D4-220E-775C11A9FBA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3668205B-5DE7-D4D4-220E-775C11A9FBA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3668205B-5DE7-D4D4-220E-775C11A9FBA6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
