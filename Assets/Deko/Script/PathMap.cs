@@ -6,6 +6,8 @@ namespace ca.HenrySoftware.Rage
 	public class PathMap : MonoBehaviour
 	{
 		public PathTiles Tiles;
+		public List<PathGenerator> Generators;
+		public PathGenerator Generator;
 		public Tilemap BackMap;
 		public Tilemap WaterBackMap;
 		public Tilemap ItemBackMap;
@@ -232,10 +234,38 @@ namespace ca.HenrySoftware.Rage
 			EmitLight(p, LightRadius);
 			LightTorches();
 		}
+		private List<Tilemap> _layers = new List<Tilemap>();
 		private void Awake()
 		{
+			_layers.Add(BackMap);
+			_layers.Add(WaterBackMap);
+			_layers.Add(ItemBackMap);
+			_layers.Add(WaterForeMap);
+			_layers.Add(ForeMap);
+			_layers.Add(ItemForeMap);
+			_layers.Add(LightMap);
 			FindTorches();
 			LightTorches();
+		}
+		[ContextMenu("Generate")]
+		public void Generate()
+		{
+			Clear();
+			for (var y = 0; y < Generator.Height; y++)
+				for (var x = 0; x < Generator.Width; x++)
+					SetRandomFloor(x, y);
+		}
+		[ContextMenu("Clear")]
+		public void Clear()
+		{
+			Debug.Log(_layers.Count);
+			foreach (var i in _layers)
+			{
+				i.ClearAllTiles();
+				i.size = new Vector3Int(Generator.Width, Generator.Height, 1);
+				i.ResizeBounds();
+				i.RefreshAllTiles();
+			}
 		}
 		private List<Vector3Int> _torches = new List<Vector3Int>();
 		public void FindTorches()

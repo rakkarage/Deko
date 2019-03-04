@@ -55,14 +55,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Deko\GenerateMap.cs" />
-     <Compile Include="Assets\Deko\GenerateMapType.cs" />
      <Compile Include="Assets\Deko\Script\Background.cs" />
      <Compile Include="Assets\Deko\Script\Ease.cs" />
      <Compile Include="Assets\Deko\Script\Intro.cs" />
      <Compile Include="Assets\Deko\Script\MiniMap.cs" />
      <Compile Include="Assets\Deko\Script\Orientation.cs" />
      <Compile Include="Assets\Deko\Script\PathFinder.cs" />
+     <Compile Include="Assets\Deko\Script\PathGenerator.cs" />
      <Compile Include="Assets\Deko\Script\PathManager.cs" />
      <Compile Include="Assets\Deko\Script\PathMap.cs" />
      <Compile Include="Assets\Deko\Script\PathMob.cs" />
