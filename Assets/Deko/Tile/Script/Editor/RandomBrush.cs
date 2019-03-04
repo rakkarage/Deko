@@ -17,7 +17,7 @@ namespace UnityEditor
 			get
 			{
 				if (!cache.ContainsKey(key))
-					this[key] = new Tuple<TileBase, Matrix4x4>(Data.Probability.Next, Data.NextMatrix);
+					this[key] = new Tuple<TileBase, Matrix4x4>(Data.Tiles.Next, Data.NextMatrix);
 				return cache[key];
 			}
 			set
@@ -98,7 +98,7 @@ namespace UnityEditor
 			var map = brushTarget?.GetComponent<Tilemap>();
 			if (!map)
 				return;
-			if (Data.Probability.Items?.Length > 0)
+			if (Data.Tiles.Items?.Length > 0)
 				Common(map, gridLayout, brushTarget, position);
 		}
 		public override void BoxFill(GridLayout gridLayout, GameObject brushTarget, BoundsInt position)
@@ -106,7 +106,7 @@ namespace UnityEditor
 			var map = brushTarget?.GetComponent<Tilemap>();
 			if (!map)
 				return;
-			if (Data.Probability.Items?.Length > 0)
+			if (Data.Tiles.Items?.Length > 0)
 				foreach (var i in position.allPositionsWithin)
 					Common(map, gridLayout, brushTarget, i);
 		}
@@ -115,7 +115,7 @@ namespace UnityEditor
 			var map = brushTarget?.GetComponent<Tilemap>();
 			if (!map)
 				return;
-			if (Data.Probability.Items?.Length > 0)
+			if (Data.Tiles.Items?.Length > 0)
 				FloodFill(map, gridLayout, brushTarget, position);
 		}
 		private void FloodFill(Tilemap map, GridLayout gridLayout, GameObject brushTarget, Vector3Int position)

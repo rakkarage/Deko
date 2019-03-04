@@ -16,7 +16,7 @@ namespace UnityEditor
 				return;
 			var brush = Brush;
 			brush.CacheClear(position);
-			if (brush.Data.Probability.Items?.Length > 0)
+			if (brush.Data.Tiles.Items?.Length > 0)
 				Common(map, gridLayout, brushTarget, position);
 		}
 		public override void BoxFillPreview(GridLayout gridLayout, GameObject brushTarget, BoundsInt position)
@@ -28,7 +28,7 @@ namespace UnityEditor
 			foreach (var i in position.allPositionsWithin)
 				if (map.GetTile(i) != null && map.GetEditorPreviewTile(i) != null)
 					brush.CacheRemove(i);
-			if (brush.Data.Probability.Items?.Length > 0)
+			if (brush.Data.Tiles.Items?.Length > 0)
 				foreach (var i in position.allPositionsWithin)
 					Common(map, gridLayout, brushTarget, i);
 		}
@@ -39,7 +39,7 @@ namespace UnityEditor
 				return;
 			var brush = Brush;
 			brush.CacheClear(position);
-			if (brush.Data.Probability.Items?.Length > 0)
+			if (brush.Data.Tiles.Items?.Length > 0)
 				FloodFill(map, gridLayout, brushTarget, position);
 		}
 		private void FloodFill(Tilemap map, GridLayout gridLayout, GameObject brushTarget, Vector3Int position)

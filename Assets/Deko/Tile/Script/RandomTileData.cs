@@ -18,26 +18,6 @@ namespace UnityEngine.Tilemaps
 		public static Quaternion RotateCounter = Quaternion.Euler(0, 0, 90f);
 		public Matrix4x4 NextMatrix => Matrix4x4.TRS(Vector3.zero,
 			Rot90 ? RotateClockwise : Quaternion.identity, new Vector3(FlipX ? -1f : 1f, FlipY ? -1f : 1f, 1f));
-		public Probability<TileBase> Probability;
-		// public TileBase[] RandomTiles;
-		// public int[] Probabilities;
-		// public TileBase NextTile
-		// {
-		// 	get
-		// 	{
-		// 		if (RandomTiles?.Length > 0 && RandomTiles?.Length == Probabilities?.Length)
-		// 		{
-		// 			var total = 0f;
-		// 			var roll = Random.Range(0, Probabilities.Sum());
-		// 			for (var i = 0; i < Probabilities.Length; i++)
-		// 			{
-		// 				total += Probabilities[i];
-		// 				if (roll < total)
-		// 					return RandomTiles[i];
-		// 			}
-		// 		}
-		// 		return RandomTiles[Random.Range(0, RandomTiles.Length)];
-		// 	}
-		// }
+		public ProbabilityTile Tiles;
 	}
 }

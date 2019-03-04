@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 namespace ca.HenrySoftware.Rage
 {
 	public enum DirectionType
@@ -162,6 +163,10 @@ namespace ca.HenrySoftware.Rage
 		public static Color Yellow = new Color(.5f, .5f, .125f);
 		public static Color YellowDark = new Color(.25f, .25f, 0f);
 	}
+	[Serializable]
+	public class ProbabilityTile : Probability<TileBase> {}
+	[Serializable]
+	public class ProbabilityGenerator : Probability<PathGenerator> { }
 	[Serializable]
 	public class Probability<T>
 	{

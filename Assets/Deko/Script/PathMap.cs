@@ -6,8 +6,7 @@ namespace ca.HenrySoftware.Rage
 	public class PathMap : MonoBehaviour
 	{
 		public PathTiles Tiles;
-		public List<PathGenerator> Generators;
-		public Probability<PathGenerator> Probability;
+		public ProbabilityGenerator Generators;
 		private PathGenerator _generator;
 		public Tilemap BackMap;
 		public Tilemap WaterBackMap;
@@ -249,14 +248,10 @@ namespace ca.HenrySoftware.Rage
 			LightTorches();
 		}
 
-		// todo: select random generator
-		// todo: share some probability code from randomTile!
-
-		// fix tilemap prefab apply
-
 		[ContextMenu("Generate")]
 		public void Generate()
 		{
+			_generator = Generators.Next;
 			Clear();
 			for (var y = 0; y < _generator.Height; y++)
 				for (var x = 0; x < _generator.Width; x++)
