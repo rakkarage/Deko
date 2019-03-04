@@ -1,9 +1,7 @@
 {
     "name": "Deko",
     "references": [
-        "GUID:412e56c90b13edd4a834b7d07919ba88",
-        "GUID:4fd4dc604e00ca226814e1f0f15a26a6",
-        "GUID:c7b722d04305f5e17b341e3a6d990cb4"
+        "GUID:412e56c90b13edd4a834b7d07919ba88"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],
