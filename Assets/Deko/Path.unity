@@ -870,6 +870,23 @@ PrefabInstance:
       propertyPath: m_AnimatedTiles.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5419054624057931777, guid: 6ae30fad10603e042911d0a34fe9a64f,
+        type: 3}
+      propertyPath: Generators.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5419054624057931777, guid: 6ae30fad10603e042911d0a34fe9a64f,
+        type: 3}
+      propertyPath: Generators.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 08145f051c98cf5c3a1399adb922ecf2,
+        type: 2}
+    - target: {fileID: 5419054624057931777, guid: 6ae30fad10603e042911d0a34fe9a64f,
+        type: 3}
+      propertyPath: Generators.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4fa4f9b94a6b84f98a1a48f75504316c,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ae30fad10603e042911d0a34fe9a64f, type: 3}
 --- !u!114 &1151155460 stripped

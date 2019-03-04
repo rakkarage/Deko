@@ -7,7 +7,7 @@ namespace ca.HenrySoftware.Rage
 	{
 		public PathTiles Tiles;
 		public List<PathGenerator> Generators;
-		public PathGenerator Generator;
+		private PathGenerator _generator;
 		public Tilemap BackMap;
 		public Tilemap WaterBackMap;
 		public Tilemap ItemBackMap;
@@ -247,12 +247,16 @@ namespace ca.HenrySoftware.Rage
 			FindTorches();
 			LightTorches();
 		}
+		
+		// todo: select random generator
+		// todo: share some probability code from randomTile!
+
 		[ContextMenu("Generate")]
 		public void Generate()
 		{
 			Clear();
-			for (var y = 0; y < Generator.Height; y++)
-				for (var x = 0; x < Generator.Width; x++)
+			for (var y = 0; y < _generator.Height; y++)
+				for (var x = 0; x < _generator.Width; x++)
 					SetRandomFloor(x, y);
 		}
 		[ContextMenu("Clear")]
@@ -262,7 +266,7 @@ namespace ca.HenrySoftware.Rage
 			foreach (var i in _layers)
 			{
 				i.ClearAllTiles();
-				i.size = new Vector3Int(Generator.Width, Generator.Height, 1);
+				i.size = new Vector3Int(_generator.Width, _generator.Height, 1);
 				i.ResizeBounds();
 				i.RefreshAllTiles();
 			}
