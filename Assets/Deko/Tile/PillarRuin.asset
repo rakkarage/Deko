@@ -4,7 +4,8 @@
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -12,8 +13,9 @@ MonoBehaviour:
   m_Name: PillarRuin
   m_EditorClassIdentifier: 
   orientation: 1
-  RandomTiles:
-  - {fileID: 11400000, guid: b6476fe52c3832d45bae2a8a2b20ff5e, type: 2}
-  - {fileID: 11400000, guid: 281f17618b9b01d4dacf7f2fdf864b71, type: 2}
-  - {fileID: 11400000, guid: 9e23f6e415991b14080a74b0d3de3856, type: 2}
-  Probabilities: 
+  Tiles:
+    Items:
+    - {fileID: 11400000, guid: b6476fe52c3832d45bae2a8a2b20ff5e, type: 2}
+    - {fileID: 11400000, guid: 281f17618b9b01d4dacf7f2fdf864b71, type: 2}
+    - {fileID: 11400000, guid: 9e23f6e415991b14080a74b0d3de3856, type: 2}
+    Probabilities: 

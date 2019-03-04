@@ -16,6 +16,7 @@ art: benmhenry@gmail.com
 
 ### Todo
 
+- FIX OrientationDrawer!!!!!!!!!!!
 - save & load?
 - add free items etc to free
 - obelisk sync random?
