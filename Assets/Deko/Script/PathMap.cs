@@ -7,6 +7,7 @@ namespace ca.HenrySoftware.Rage
 	{
 		public PathTiles Tiles;
 		public List<PathGenerator> Generators;
+		public Probability<PathGenerator> Probability;
 		private PathGenerator _generator;
 		public Tilemap BackMap;
 		public Tilemap WaterBackMap;
@@ -247,9 +248,11 @@ namespace ca.HenrySoftware.Rage
 			FindTorches();
 			LightTorches();
 		}
-		
+
 		// todo: select random generator
 		// todo: share some probability code from randomTile!
+
+		// fix tilemap prefab apply
 
 		[ContextMenu("Generate")]
 		public void Generate()

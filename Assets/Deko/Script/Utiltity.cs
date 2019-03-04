@@ -162,4 +162,28 @@ namespace ca.HenrySoftware.Rage
 		public static Color Yellow = new Color(.5f, .5f, .125f);
 		public static Color YellowDark = new Color(.25f, .25f, 0f);
 	}
+	public class Probability<T>
+	{
+		public T[] Items;
+		public int[] Probabilities;
+		public T Next
+		{
+			get
+			{
+				if (Items?.Length > 0 && Items?.Length == Probabilities?.Length)
+				{
+					var total = 0f;
+					var roll = Utility.Random.Next(0, Probabilities.Sum());
+					for (var i = 0; i < Probabilities.Length; i++)
+					{
+						total += Probabilities[i];
+						if (roll < total)
+							return Items[i];
+					}
+				}
+				return Items[Utility.Random.Next(0, Items.Length)];
+			}
+		}
+
+	}
 }
