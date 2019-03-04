@@ -367,10 +367,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34bb3c2b716b2e2438fff65b755b3963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <TargetTarget>k__BackingField: {x: 0, y: 0, z: 0}
   Back: {fileID: 97634259}
   Fore: {fileID: 192966355}
-  _t: {fileID: 0}
 --- !u!1 &380949024
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,9 +484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: []
-  _animator: {fileID: 0}
   Manager: {fileID: 1833274042}
-  _t: {fileID: 0}
 --- !u!1 &485750458
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,9 +517,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Manager: {fileID: 1833274042}
-  _t: {fileID: 0}
-  _sr: {fileID: 0}
-  _shown: 0
 --- !u!212 &485750460
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -785,9 +778,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca02646617c51e64c8194e71bf25047a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wide: 1
-  _width: 1239
-  _height: 535
 --- !u!1001 &1151155459
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1064,9 +1054,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1833274037}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.69661456, y: 1.2099609, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 698916963}
   m_RootOrder: 0
@@ -1089,8 +1079,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ada27574bb4f9041b023a48a68e858e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _t: {fileID: 1833274038}
-  _image: {fileID: 1833274040}
 --- !u!114 &1833274040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1152,10 +1140,6 @@ MonoBehaviour:
   Target: {fileID: 300803834}
   Map: {fileID: 1151155460}
   MiniMap: {fileID: 485750459}
-  _drag: 0
-  _totalTime: 0
-  _totalTurns: 0
-  _turn: 0
 --- !u!1 &1843903720
 GameObject:
   m_ObjectHideFlags: 0
@@ -1201,13 +1185,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8e8fac7ff75c394ba0f02cfbee83e39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _limit: 10
   Path: []
   SortingOrder: 1
   Manager: {fileID: 1833274042}
   Map: {fileID: 1151155460}
-  _pool: {fileID: 0}
-  _opacityStep: 0
 --- !u!114 &1843903723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1223,5 +1204,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Count: 12
   Prefab: {fileID: 173960, guid: f42bb65248d358f49888404a1bf1a6c7, type: 3}
-  _pool: []
-  _t: {fileID: 0}
