@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: f6f5790fce2ae2e489f4ed1ed138df04, type: 3}
   m_Name: Tiles
   m_EditorClassIdentifier: 
@@ -21,11 +20,15 @@ MonoBehaviour:
   Wall:
   - {fileID: 11400000, guid: 43bc680d6acea1749a07f5b9c154ac19, type: 2}
   - {fileID: 11400000, guid: 11ed428a6cf18af4b82a67a229d18e83, type: 2}
+  WallSimple:
+  - {fileID: 11400000, guid: 43bc680d6acea1749a07f5b9c154ac19, type: 2}
   Floor:
   - {fileID: 11400000, guid: f3119f26ba6b66642b7268df71ed28e9, type: 2}
   - {fileID: 11400000, guid: bad9226da01dae942872bfa608d6e2e0, type: 2}
-  RoomFloor:
+  FloorRoom:
   - {fileID: 11400000, guid: bad9226da01dae942872bfa608d6e2e0, type: 2}
+  FloorSimple:
+  - {fileID: 11400000, guid: f3119f26ba6b66642b7268df71ed28e9, type: 2}
   Light:
   - {fileID: 11400000, guid: d8b037bc1d9c98a4890857e6df5cb67c, type: 2}
   - {fileID: 11400000, guid: da618b13d1d9f7b4d8ae9caa43d4b0dc, type: 2}

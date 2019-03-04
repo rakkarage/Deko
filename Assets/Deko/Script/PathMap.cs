@@ -31,16 +31,19 @@ namespace ca.HenrySoftware.Rage
 			(x >= 0 + edge) && (y >= 0 + edge) && (x < Width - edge) && (y < Height - edge);
 		public bool IsFloorRoom(int x, int y) => IsFloorRoom(new Vector3Int(x, y, 0));
 		public bool IsFloorRoom(Vector2Int p) => IsFloorRoom(p.Vector3Int());
-		public bool IsFloorRoom(Vector3Int p) => Tiles.RoomFloor.Contains(BackMap.GetTile(p));
-		public TileBase RandomRoomFloor => Tiles.RoomFloor[Utility.Random.Next(Tiles.RoomFloor.Count)];
-		public void SetRandomRoomFloor(int x, int y) => SetRandomRoomFloor(new Vector3Int(x, y, 0));
-		public void SetRandomRoomFloor(Vector2Int p) => SetRandomRoomFloor(p.Vector3Int());
-		public void SetRandomRoomFloor(Vector3Int p) => BackMap.SetTile(p, RandomRoomFloor);
+		public bool IsFloorRoom(Vector3Int p) => Tiles.FloorRoom.Contains(BackMap.GetTile(p));
+		public TileBase RandomFloorRoom => Tiles.FloorRoom[Utility.Random.Next(Tiles.FloorRoom.Count)];
+		public void SetRandomFloorRoom(int x, int y) => SetRandomFloorRoom(new Vector3Int(x, y, 0));
+		public void SetRandomFloorRoom(Vector2Int p) => SetRandomFloorRoom(p.Vector3Int());
+		public void SetRandomFloorRoom(Vector3Int p) => BackMap.SetTile(p, RandomFloorRoom);
+		public bool IsFloorSimple(int x, int y) => IsFloorSimple(new Vector3Int(x, y, 0));
+		public bool IsFloorSimple(Vector2Int p) => IsFloorSimple(p.Vector3Int());
+		public bool IsFloorSimple(Vector3Int p) => Tiles.FloorSimple.Contains(BackMap.GetTile(p));
+		public TileBase RandomFloorSimple => Tiles.FloorSimple[Utility.Random.Next(Tiles.FloorSimple.Count)];
+		public void SetRandomFloorSimple(int x, int y) => SetRandomFloorSimple(new Vector3Int(x, y, 0));
+		public void SetRandomFloorSimple(Vector2Int p) => SetRandomFloorSimple(p.Vector3Int());
+		public void SetRandomFloorSimple(Vector3Int p) => BackMap.SetTile(p, RandomFloorSimple);
 		public bool IsFloor(Vector3Int p) => Tiles.Floor.Contains(BackMap.GetTile(p));
-		public TileBase RandomFloor => Tiles.Floor[Utility.Random.Next(Tiles.Floor.Count)];
-		public void SetRandomFloor(int x, int y) => SetRandomFloor(new Vector3Int(x, y, 0));
-		public void SetRandomFloor(Vector2Int p) => SetRandomFloor(p.Vector3Int());
-		public void SetRandomFloor(Vector3Int p) => BackMap.SetTile(p, RandomFloor);
 		public bool IsWall(int x, int y) => IsWall(new Vector3Int(x, y, 0));
 		public bool IsWall(Vector2Int p) => IsWall(p.Vector3Int());
 		public bool IsWall(Vector3Int p) => Tiles.Wall.Contains(ForeMap.GetTile(p));
@@ -48,6 +51,10 @@ namespace ca.HenrySoftware.Rage
 		public void SetRandomWall(int x, int y) => SetRandomWall(new Vector3Int(x, y, 0));
 		public void SetRandomWall(Vector2Int p) => SetRandomWall(p.Vector3Int());
 		public void SetRandomWall(Vector3Int p) => BackMap.SetTile(p, RandomWall);
+		public TileBase RandomWallSimple => Tiles.WallSimple[Utility.Random.Next(Tiles.WallSimple.Count)];
+		public void SetRandomWallSimple(int x, int y) => SetRandomWallSimple(new Vector3Int(x, y, 0));
+		public void SetRandomWallSimple(Vector2Int p) => SetRandomWallSimple(p.Vector3Int());
+		public void SetRandomWallSimple(Vector3Int p) => BackMap.SetTile(p, RandomWallSimple);
 		public bool IsStairs(int x, int y) => IsStairs(new Vector3Int(x, y, 0));
 		public bool IsStairs(Vector2Int p) => IsStairs(p.Vector3Int());
 		public bool IsStairs(Vector3Int p) => IsStairsUp(p) || IsStairsDown(p);
@@ -256,7 +263,7 @@ namespace ca.HenrySoftware.Rage
 			Clear();
 			for (var y = 0; y < _generator.Height; y++)
 				for (var x = 0; x < _generator.Width; x++)
-					SetRandomFloor(x, y);
+					SetRandomFloorSimple(x, y);
 		}
 		[ContextMenu("Clear")]
 		public void Clear()

@@ -17,8 +17,8 @@ art: benmhenry@gmail.com
 ### Todo
 
 - only non room tiles
-- add more tile themes
 - make including room an option in generator
+- add more tile themes
 - save & load?
 - add free items etc to free
 - obelisk sync random?
