@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 namespace ca.HenrySoftware.Rage
 {
+	[ExecuteInEditMode]
 	public class PathMap : MonoBehaviour
 	{
 		public PathTiles Tiles;
@@ -260,7 +261,6 @@ namespace ca.HenrySoftware.Rage
 		[ContextMenu("Clear")]
 		public void Clear()
 		{
-			Debug.Log(_layers.Count);
 			foreach (var i in _layers)
 			{
 				i.ClearAllTiles();
