@@ -162,6 +162,7 @@ namespace ca.HenrySoftware.Rage
 		public static Color Yellow = new Color(.5f, .5f, .125f);
 		public static Color YellowDark = new Color(.25f, .25f, 0f);
 	}
+	[Serializable]
 	public class Probability<T>
 	{
 		public T[] Items;
