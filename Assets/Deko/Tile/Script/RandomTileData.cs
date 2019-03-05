@@ -18,6 +18,6 @@ namespace UnityEngine.Tilemaps
 		public static Quaternion RotateCounter = Quaternion.Euler(0, 0, 90f);
 		public Matrix4x4 NextMatrix => Matrix4x4.TRS(Vector3.zero,
 			Rot90 ? RotateClockwise : Quaternion.identity, new Vector3(FlipX ? -1f : 1f, FlipY ? -1f : 1f, 1f));
-		public ProbabilityTile Tiles;
+		public WeightedTile Tiles;
 	}
 }

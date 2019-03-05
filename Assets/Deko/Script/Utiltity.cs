@@ -164,25 +164,25 @@ namespace ca.HenrySoftware.Rage
 		public static Color YellowDark = new Color(.25f, .25f, 0f);
 	}
 	[Serializable]
-	public class ProbabilityTile : Probability<TileBase> {}
+	public class WeightedTile : Weighted<TileBase> {}
 	[Serializable]
-	public class ProbabilityGenerator : Probability<PathGenerator> { }
+	public class WeightedGenerator : Weighted<PathGenerator> { }
 	[Serializable]
-	public class Probability<T>
+	public class Weighted<T>
 	{
 		public T[] Items;
-		public int[] Probabilities;
+		public int[] Weights;
 		public T Next
 		{
 			get
 			{
-				if (Items?.Length > 0 && Items?.Length == Probabilities?.Length)
+				if (Items?.Length > 0 && Items?.Length == Weights?.Length)
 				{
 					var total = 0f;
-					var roll = Utility.Random.Next(0, Probabilities.Sum());
-					for (var i = 0; i < Probabilities.Length; i++)
+					var roll = Utility.Random.Next(0, Weights.Sum());
+					for (var i = 0; i < Weights.Length; i++)
 					{
-						total += Probabilities[i];
+						total += Weights[i];
 						if (roll < total)
 							return Items[i];
 					}

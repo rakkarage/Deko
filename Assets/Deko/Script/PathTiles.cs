@@ -10,10 +10,10 @@ public class PathTiles : ScriptableObject
 	public TileBase StairsDown;
 	public TileBase StairsUp;
 	public TileBase Torch;
-	public List<TileBase> Wall;
-	public List<TileBase> WallSimple;
-	public List<TileBase> Floor;
-	public List<TileBase> FloorRoom;
-	public List<TileBase> FloorSimple;
+	public TileBase Wall;
+	public TileBase WallSimple;
+	public TileBase Floor;
+	public TileBase FloorRoom;
+	public TileBase FloorSimple;
 	public List<TileBase> Light;
 }

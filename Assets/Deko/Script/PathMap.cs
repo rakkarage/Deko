@@ -7,7 +7,7 @@ namespace ca.HenrySoftware.Rage
 	public class PathMap : MonoBehaviour
 	{
 		public PathTiles Tiles;
-		public ProbabilityGenerator Generators;
+		public WeightedGenerator Generators;
 		private PathGenerator _generator;
 		public Tilemap BackMap;
 		public Tilemap WaterBackMap;
@@ -31,30 +31,39 @@ namespace ca.HenrySoftware.Rage
 			(x >= 0 + edge) && (y >= 0 + edge) && (x < Width - edge) && (y < Height - edge);
 		public bool IsFloorRoom(int x, int y) => IsFloorRoom(new Vector3Int(x, y, 0));
 		public bool IsFloorRoom(Vector2Int p) => IsFloorRoom(p.Vector3Int());
-		public bool IsFloorRoom(Vector3Int p) => Tiles.FloorRoom.Contains(BackMap.GetTile(p));
-		public TileBase RandomFloorRoom => Tiles.FloorRoom[Utility.Random.Next(Tiles.FloorRoom.Count)];
-		public void SetRandomFloorRoom(int x, int y) => SetRandomFloorRoom(new Vector3Int(x, y, 0));
-		public void SetRandomFloorRoom(Vector2Int p) => SetRandomFloorRoom(p.Vector3Int());
-		public void SetRandomFloorRoom(Vector3Int p) => BackMap.SetTile(p, RandomFloorRoom);
+		public bool IsFloorRoom(Vector3Int p) => BackMap.GetTile(p) == Tiles.FloorRoom;
+		public void SetFloorRoom(int x, int y) => SetFloorRoom(new Vector3Int(x, y, 0));
+		public void SetFloorRoom(Vector2Int p) => SetFloorRoom(p.Vector3Int());
+		public void SetFloorRoom(Vector3Int p) => BackMap.SetTile(p, Tiles.FloorRoom);
 		public bool IsFloorSimple(int x, int y) => IsFloorSimple(new Vector3Int(x, y, 0));
 		public bool IsFloorSimple(Vector2Int p) => IsFloorSimple(p.Vector3Int());
-		public bool IsFloorSimple(Vector3Int p) => Tiles.FloorSimple.Contains(BackMap.GetTile(p));
-		public TileBase RandomFloorSimple => Tiles.FloorSimple[Utility.Random.Next(Tiles.FloorSimple.Count)];
-		public void SetRandomFloorSimple(int x, int y) => SetRandomFloorSimple(new Vector3Int(x, y, 0));
-		public void SetRandomFloorSimple(Vector2Int p) => SetRandomFloorSimple(p.Vector3Int());
-		public void SetRandomFloorSimple(Vector3Int p) => BackMap.SetTile(p, RandomFloorSimple);
-		public bool IsFloor(Vector3Int p) => Tiles.Floor.Contains(BackMap.GetTile(p));
+		public bool IsFloorSimple(Vector3Int p) => BackMap.GetTile(p) == Tiles.FloorSimple;
+		public void SetFloorSimple(int x, int y) => SetFloorSimple(new Vector3Int(x, y, 0));
+		public void SetFloorSimple(Vector2Int p) => SetFloorSimple(p.Vector3Int());
+		public void SetFloorSimple(Vector3Int p) => BackMap.SetTile(p, Tiles.FloorSimple);
+		public bool IsFloor(int x, int y) => IsFloor(new Vector3Int(x, y, 0));
+		public bool IsFloor(Vector2Int p) => IsFloor(p.Vector3Int());
+		public bool IsFloor(Vector3Int p)
+		{
+			var tile = BackMap.GetTile(p);
+			return tile == Tiles.Floor || tile == Tiles.FloorSimple || tile == Tiles.FloorRoom;
+		}
+		public void SetFloor(int x, int y) => SetFloor(new Vector3Int(x, y, 0));
+		public void SetFloor(Vector2Int p) => SetFloor(p.Vector3Int());
+		public void SetFloor(Vector3Int p) => BackMap.SetTile(p, Tiles.Floor);
 		public bool IsWall(int x, int y) => IsWall(new Vector3Int(x, y, 0));
 		public bool IsWall(Vector2Int p) => IsWall(p.Vector3Int());
-		public bool IsWall(Vector3Int p) => Tiles.Wall.Contains(ForeMap.GetTile(p));
-		public TileBase RandomWall => Tiles.Wall[Utility.Random.Next(Tiles.Wall.Count)];
+		public bool IsWall(Vector3Int p)
+		{
+			var tile = BackMap.GetTile(p);
+			return tile == Tiles.Wall || tile == Tiles.WallSimple;
+		}
 		public void SetRandomWall(int x, int y) => SetRandomWall(new Vector3Int(x, y, 0));
 		public void SetRandomWall(Vector2Int p) => SetRandomWall(p.Vector3Int());
-		public void SetRandomWall(Vector3Int p) => BackMap.SetTile(p, RandomWall);
-		public TileBase RandomWallSimple => Tiles.WallSimple[Utility.Random.Next(Tiles.WallSimple.Count)];
+		public void SetRandomWall(Vector3Int p) => BackMap.SetTile(p, Tiles.Wall);
 		public void SetRandomWallSimple(int x, int y) => SetRandomWallSimple(new Vector3Int(x, y, 0));
 		public void SetRandomWallSimple(Vector2Int p) => SetRandomWallSimple(p.Vector3Int());
-		public void SetRandomWallSimple(Vector3Int p) => BackMap.SetTile(p, RandomWallSimple);
+		public void SetRandomWallSimple(Vector3Int p) => BackMap.SetTile(p, Tiles.WallSimple);
 		public bool IsStairs(int x, int y) => IsStairs(new Vector3Int(x, y, 0));
 		public bool IsStairs(Vector2Int p) => IsStairs(p.Vector3Int());
 		public bool IsStairs(Vector3Int p) => IsStairsUp(p) || IsStairsDown(p);
@@ -84,7 +93,7 @@ namespace ca.HenrySoftware.Rage
 		public bool IsBlocked(Vector2Int p) => IsBlocked(p.Vector3Int());
 		public bool IsBlocked(Vector3Int p)
 		{
-			return Tiles.Wall.Contains(ForeMap.GetTile(p)) || !Tiles.Floor.Contains(BackMap.GetTile(p));
+			return IsWall(p) || !IsFloor(p);
 		}
 		public Color GetColor(Vector3Int p)
 		{
@@ -263,7 +272,7 @@ namespace ca.HenrySoftware.Rage
 			Clear();
 			for (var y = 0; y < _generator.Height; y++)
 				for (var x = 0; x < _generator.Width; x++)
-					SetRandomFloorSimple(x, y);
+					SetFloorSimple(x, y);
 		}
 		[ContextMenu("Clear")]
 		public void Clear()
