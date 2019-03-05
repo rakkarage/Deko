@@ -268,7 +268,6 @@ namespace ca.HenrySoftware.Rage
 		[ContextMenu("Generate")]
 		public void Generate()
 		{
-			_generator = Generators.Next;
 			Clear();
 			for (var y = 0; y < _generator.Height; y++)
 				for (var x = 0; x < _generator.Width; x++)
@@ -277,6 +276,7 @@ namespace ca.HenrySoftware.Rage
 		[ContextMenu("Clear")]
 		public void Clear()
 		{
+			_generator = Generators.Next;
 			foreach (var i in _layers)
 			{
 				i.ClearAllTiles();

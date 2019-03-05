@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe9e3e33b044f8c4f9395d54a34f9222, type: 3}
-  m_Name: Floor
+  m_Name: FloorSimple
   m_EditorClassIdentifier: 
-  orientation: -1
+  orientation: 0
   Tiles:
     Items:
     - {fileID: 11400000, guid: 00525f509c6d18944ac9c23b94e10e33, type: 2}
@@ -21,10 +21,4 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 4f2e6f8e0a132ee45a59c3d86a1d153c, type: 2}
     - {fileID: 11400000, guid: b0de3f4ec4f009641a697215100a68bc, type: 2}
     - {fileID: 11400000, guid: 5eeec5acf729e1448844e734e3120edb, type: 2}
-    - {fileID: 11400000, guid: 7decd5ae9b9930647900fa9a230e32a6, type: 2}
-    - {fileID: 11400000, guid: aa372b7ba75f0284b94e81d6c962ec6c, type: 2}
-    - {fileID: 11400000, guid: d819ff9a3e0d67a42bb2d5198dcb4d18, type: 2}
-    - {fileID: 11400000, guid: f4d21f418ab710f41b75056f5e935fcd, type: 2}
-    - {fileID: 11400000, guid: 026729e71c0a4694d9476352c24a2212, type: 2}
-    - {fileID: 11400000, guid: ae661b9e20417694b812b7beea79042f, type: 2}
-    Weights: 0c0000000c0000000c0000000c00000001000000010000000c0000000c0000000c0000000c0000000100000001000000
+    Weights: 0c0000000c0000000c0000000c0000000100000001000000
