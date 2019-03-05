@@ -6,9 +6,7 @@ art: benmhenry@gmail.com
 
 ## Todo
 
-- only non room tiles
-- make including room an option in generator
-- add more tile themes
+- orientation not being applied!?
 - save & load?
 - add free items etc to free
 - generate levels
