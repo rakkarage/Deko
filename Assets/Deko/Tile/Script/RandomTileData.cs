@@ -6,7 +6,6 @@ using UnityEngine;
 namespace UnityEngine.Tilemaps
 {
 	[CreateAssetMenu]
-	[Serializable]
 	public class RandomTileData : ScriptableObject
 	{
 		public TileOrientation orientation;

@@ -164,7 +164,7 @@ namespace ca.HenrySoftware.Rage
 		public static Color YellowDark = new Color(.25f, .25f, 0f);
 	}
 	[Serializable]
-	public class WeightedTile : Weighted<TileBase> {}
+	public class WeightedTile : Weighted<TileBase> { }
 	[Serializable]
 	public class WeightedGenerator : Weighted<PathGenerator> { }
 	[Serializable]

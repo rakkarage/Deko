@@ -2,7 +2,6 @@
 namespace UnityEngine.Tilemaps
 {
 	[CreateAssetMenu]
-	[Serializable]
 	public class RandomTile : TileBase
 	{
 		public RandomTileData Data;
