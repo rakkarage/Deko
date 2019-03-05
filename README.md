@@ -7,6 +7,7 @@ art: benmhenry@gmail.com
 ## Todo
 
 - orientation not being applied!?
+- make 2d-extras pull requests for randomTile etc
 - save & load?
 - add free items etc to free
 - generate levels
