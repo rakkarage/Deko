@@ -4,17 +4,7 @@
 code: rakkarage@gmail.com
 art: benmhenry@gmail.com
 
-## Description
-
-- game
-  - intro
-  - save
-  - map
-    - path
-  - monsters
-  - loot
-
-### Todo
+## Todo
 
 - only non room tiles
 - make including room an option in generator
@@ -24,16 +14,7 @@ art: benmhenry@gmail.com
 - generate levels
 - mobs
 
-### Bugs
+## Bugs
 
 - obelisk sync random?
 - ReorderableInspector limit of 10!?
-
-## Thanks
-
-- <http://font.ubuntu.com>
-- <https://github.com/Microsoft/vscode>
-- <https://github.com/Unity-Technologies/vscode-unity-debug>
-- <https://github.com/Unity-Technologies/2d-extras>
-- <https://github.com/SubjectNerd-Unity/ReorderableInspector>
-- <https://github.com/AdamRamberg/unity-atoms>
