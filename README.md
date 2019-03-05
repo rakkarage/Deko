@@ -21,9 +21,13 @@ art: benmhenry@gmail.com
 - add more tile themes
 - save & load?
 - add free items etc to free
-- obelisk sync random?
 - generate levels
 - mobs
+
+### Bugs
+
+- obelisk sync random?
+- ReorderableInspector limit of 10!?
 
 ## Thanks
 
