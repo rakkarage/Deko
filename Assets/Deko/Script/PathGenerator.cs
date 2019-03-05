@@ -4,4 +4,5 @@ public class PathGenerator : ScriptableObject
 {
 	public int Width;
 	public int Height;
+	public bool MixFloor;
 }

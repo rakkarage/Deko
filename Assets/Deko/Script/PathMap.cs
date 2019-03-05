@@ -270,8 +270,15 @@ namespace ca.HenrySoftware.Rage
 		{
 			Clear();
 			for (var y = 0; y < _generator.Height; y++)
+			{
 				for (var x = 0; x < _generator.Width; x++)
-					SetFloorSimple(x, y);
+				{
+					if (_generator.MixFloor)
+						SetFloor(x, y);
+					else
+						SetFloorSimple(x, y);
+				}
+			}
 		}
 		[ContextMenu("Clear")]
 		public void Clear()
