@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe9e3e33b044f8c4f9395d54a34f9222, type: 3}
   m_Name: FloorSimple
   m_EditorClassIdentifier: 
-  orientation: 0
+  orientation: -1
   Tiles:
     Items:
     - {fileID: 11400000, guid: 00525f509c6d18944ac9c23b94e10e33, type: 2}
