@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
   m_Name: WallTorch11
   m_EditorClassIdentifier: 
-  AnimatedSprites: []
+  AnimatedSprites:
+  - {fileID: -8296622164665827404, guid: ae44a1c5b6947a3bfa835a71345a70ed, type: 3}
+  - {fileID: -2888784178581112041, guid: ae44a1c5b6947a3bfa835a71345a70ed, type: 3}
+  - {fileID: 8038167127012859192, guid: ae44a1c5b6947a3bfa835a71345a70ed, type: 3}
+  - {fileID: -1901266728891305733, guid: ae44a1c5b6947a3bfa835a71345a70ed, type: 3}
   RandomStartTime: 1
   Speed: {x: 1, y: 1}
   TileColliderType: 0
