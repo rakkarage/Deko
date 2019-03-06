@@ -12,10 +12,10 @@ namespace UnityEngine.Tilemaps
 		public static Quaternion RotateCounter = Quaternion.Euler(0, 0, 90f);
 		public Matrix4x4 NextMatrix => Matrix4x4.TRS(Vector3.zero,
 			Rot90 ? RotateClockwise : Quaternion.identity, new Vector3(FlipX ? -1f : 1f, FlipY ? -1f : 1f, 1f));
-		public WeightedTile Tiles;
+		public WeightedSprite Sprites;
 		public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData)
 		{
-			Tiles.Next.GetTileData(position, tilemap, ref tileData);
+			tileData.sprite = Sprites.Next;
 			tileData.flags = TileFlags.LockTransform;
 			tileData.transform = NextMatrix;
 		}
