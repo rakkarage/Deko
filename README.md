@@ -7,7 +7,7 @@ art: benmhenry@gmail.com
 ## Todo
 
 - make 2d-extras pull requests for randomTile etc
-- save & load?
+- save & load? (odin serializer? not working on linux?)
 - add free items etc to free
 - generate levels
 - mobs
