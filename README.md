@@ -6,6 +6,7 @@ art: benmhenry@gmail.com
 
 ## Todo
 
+- combine RandomTile & RandomTileData!!!!!!!!!!!!!!!!!!!!
 - rename theme tiles?
 - is there a way not to dupe floor and wall? and preserve weights? some way to combine wights? Weighted<Weighted>!?
 - make 2d-extras pull requests for randomTile etc
