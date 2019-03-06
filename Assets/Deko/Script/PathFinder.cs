@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-namespace ca.HenrySoftware.Rage
+namespace ca.HenrySoftware.Deko
 {
 	[RequireComponent(typeof(Pool))]
 	public class PathFinder : MonoBehaviour

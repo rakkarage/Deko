@@ -1,4 +1,4 @@
-namespace ca.HenrySoftware.Rage
+namespace ca.HenrySoftware.Deko
 {
 	public sealed class PathQueue
 	{

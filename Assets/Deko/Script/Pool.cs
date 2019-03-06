@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-namespace ca.HenrySoftware.Rage
+namespace ca.HenrySoftware.Deko
 {
 	public class Pool : MonoBehaviour
 	{

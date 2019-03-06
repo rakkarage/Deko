@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
-using UnityEngine.Tilemaps;
-namespace ca.HenrySoftware.Rage
+﻿using UnityEngine;
+namespace ca.HenrySoftware.Deko
 {
 	public enum DirectionType
 	{
@@ -163,38 +159,5 @@ namespace ca.HenrySoftware.Rage
 		public static Color YellowLight = new Color(.75f, .75f, .25f);
 		public static Color Yellow = new Color(.5f, .5f, .125f);
 		public static Color YellowDark = new Color(.25f, .25f, 0f);
-	}
-	[Serializable]
-	public class WeightedTile : Weighted<TileBase> { }
-	[Serializable]
-	public class WeightedTileList : Weighted<List<TileBase>> { }
-	[Serializable]
-	public class WeightedGenerator : Weighted<PathGenerator> { }
-	[Serializable]
-	public class WeightedTheme : Weighted<Theme> { }
-	[Serializable]
-	public class Weighted<T>
-	{
-		public T[] Items;
-		public int[] Weights;
-		public T Next
-		{
-			get
-			{
-				if (Items?.Length > 0 && Items?.Length == Weights?.Length)
-				{
-					var total = 0f;
-					var roll = Utility.Random.Next(0, Weights.Sum());
-					for (var i = 0; i < Weights.Length; i++)
-					{
-						total += Weights[i];
-						if (roll < total)
-							return Items[i];
-					}
-				}
-				return Items[Utility.Random.Next(0, Items.Length)];
-			}
-		}
-
 	}
 }

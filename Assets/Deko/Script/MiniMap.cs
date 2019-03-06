@@ -1,5 +1,5 @@
 using UnityEngine;
-namespace ca.HenrySoftware.Rage
+namespace ca.HenrySoftware.Deko
 {
 	[RequireComponent(typeof(SpriteRenderer))]
 	public class MiniMap : MonoBehaviour

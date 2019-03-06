@@ -1,4 +1,4 @@
-﻿using ca.HenrySoftware.Rage;
+﻿using ca.HenrySoftware.Deko;
 namespace UnityEngine.Tilemaps
 {
 	[CreateAssetMenu]

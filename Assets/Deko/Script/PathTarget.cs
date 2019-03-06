@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
-namespace ca.HenrySoftware.Rage
+namespace ca.HenrySoftware.Deko
 {
 	public class PathTarget : MonoBehaviour
 	{

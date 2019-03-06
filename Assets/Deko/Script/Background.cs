@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-namespace ca.HenrySoftware.Rage
+namespace ca.HenrySoftware.Deko
 {
 	[ExecuteInEditMode]
 	[RequireComponent(typeof(Image))]
