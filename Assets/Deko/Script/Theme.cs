@@ -3,7 +3,7 @@ using UnityEngine.Tilemaps;
 [CreateAssetMenu]
 public class Theme : ScriptableObject
 {
-	public TileBase Floor;
+	public TileBase FloorSimple;
 	public TileBase FloorRoom;
 	public TileBase StairDown;
 	public TileBase StairUp;
@@ -11,6 +11,6 @@ public class Theme : ScriptableObject
 	public TileBase DoorOpen;
 	public TileBase DoorBroke;
 	public TileBase Torch;
-	public TileBase Wall;
+	public TileBase WallSimple;
 	public TileBase WallRoom;
 }
