@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -166,7 +167,11 @@ namespace ca.HenrySoftware.Rage
 	[Serializable]
 	public class WeightedTile : Weighted<TileBase> { }
 	[Serializable]
+	public class WeightedTileList : Weighted<List<TileBase>> { }
+	[Serializable]
 	public class WeightedGenerator : Weighted<PathGenerator> { }
+	[Serializable]
+	public class WeightedTheme : Weighted<Theme> { }
 	[Serializable]
 	public class Weighted<T>
 	{

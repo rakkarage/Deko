@@ -9,6 +9,10 @@ namespace ca.HenrySoftware.Rage
 		public PathTiles Tiles;
 		public WeightedGenerator Generators;
 		private PathGenerator _generator;
+		public WeightedTheme Themes;
+		private Theme _theme;
+		public WeightedTileList LightThemes;
+		private List<TileBase> _lightTheme;
 		public Tilemap BackMap;
 		public Tilemap WaterBackMap;
 		public Tilemap ItemBackMap;
@@ -31,63 +35,63 @@ namespace ca.HenrySoftware.Rage
 			(x >= 0 + edge) && (y >= 0 + edge) && (x < Width - edge) && (y < Height - edge);
 		public bool IsFloorRoom(int x, int y) => IsFloorRoom(new Vector3Int(x, y, 0));
 		public bool IsFloorRoom(Vector2Int p) => IsFloorRoom(p.Vector3Int());
-		public bool IsFloorRoom(Vector3Int p) => BackMap.GetTile(p) == Tiles.FloorRoom;
+		public bool IsFloorRoom(Vector3Int p) => BackMap.GetTile(p) == _theme.FloorRoom;
 		public void SetFloorRoom(int x, int y) => SetFloorRoom(new Vector3Int(x, y, 0));
 		public void SetFloorRoom(Vector2Int p) => SetFloorRoom(p.Vector3Int());
-		public void SetFloorRoom(Vector3Int p) => BackMap.SetTile(p, Tiles.FloorRoom);
+		public void SetFloorRoom(Vector3Int p) => BackMap.SetTile(p, _theme.FloorRoom);
 		public bool IsFloorSimple(int x, int y) => IsFloorSimple(new Vector3Int(x, y, 0));
 		public bool IsFloorSimple(Vector2Int p) => IsFloorSimple(p.Vector3Int());
-		public bool IsFloorSimple(Vector3Int p) => BackMap.GetTile(p) == Tiles.FloorSimple;
+		public bool IsFloorSimple(Vector3Int p) => BackMap.GetTile(p) == _theme.FloorSimple;
 		public void SetFloorSimple(int x, int y) => SetFloorSimple(new Vector3Int(x, y, 0));
 		public void SetFloorSimple(Vector2Int p) => SetFloorSimple(p.Vector3Int());
-		public void SetFloorSimple(Vector3Int p) => BackMap.SetTile(p, Tiles.FloorSimple);
+		public void SetFloorSimple(Vector3Int p) => BackMap.SetTile(p, _theme.FloorSimple);
 		public bool IsFloor(int x, int y) => IsFloor(new Vector3Int(x, y, 0));
 		public bool IsFloor(Vector2Int p) => IsFloor(p.Vector3Int());
 		public bool IsFloor(Vector3Int p)
 		{
 			var tile = BackMap.GetTile(p);
-			return tile == Tiles.Floor || tile == Tiles.FloorSimple || tile == Tiles.FloorRoom;
+			return tile == _theme.Floor || tile == _theme.FloorSimple || tile == _theme.FloorRoom;
 		}
 		public void SetFloor(int x, int y) => SetFloor(new Vector3Int(x, y, 0));
 		public void SetFloor(Vector2Int p) => SetFloor(p.Vector3Int());
-		public void SetFloor(Vector3Int p) => BackMap.SetTile(p, Tiles.Floor);
+		public void SetFloor(Vector3Int p) => BackMap.SetTile(p, _theme.Floor);
 		public bool IsWall(int x, int y) => IsWall(new Vector3Int(x, y, 0));
 		public bool IsWall(Vector2Int p) => IsWall(p.Vector3Int());
 		public bool IsWall(Vector3Int p)
 		{
 			var tile = BackMap.GetTile(p);
-			return tile == Tiles.Wall || tile == Tiles.WallSimple;
+			return tile == _theme.Wall || tile == _theme.WallSimple;
 		}
 		public void SetRandomWall(int x, int y) => SetRandomWall(new Vector3Int(x, y, 0));
 		public void SetRandomWall(Vector2Int p) => SetRandomWall(p.Vector3Int());
-		public void SetRandomWall(Vector3Int p) => BackMap.SetTile(p, Tiles.Wall);
+		public void SetRandomWall(Vector3Int p) => BackMap.SetTile(p, _theme.Wall);
 		public void SetRandomWallSimple(int x, int y) => SetRandomWallSimple(new Vector3Int(x, y, 0));
 		public void SetRandomWallSimple(Vector2Int p) => SetRandomWallSimple(p.Vector3Int());
-		public void SetRandomWallSimple(Vector3Int p) => BackMap.SetTile(p, Tiles.WallSimple);
+		public void SetRandomWallSimple(Vector3Int p) => BackMap.SetTile(p, _theme.WallSimple);
 		public bool IsStairs(int x, int y) => IsStairs(new Vector3Int(x, y, 0));
 		public bool IsStairs(Vector2Int p) => IsStairs(p.Vector3Int());
 		public bool IsStairs(Vector3Int p) => IsStairsUp(p) || IsStairsDown(p);
 		public bool IsStairsUp(int x, int y) => IsStairsUp(new Vector3Int(x, y, 0));
 		public bool IsStairsUp(Vector2Int p) => IsStairsUp(p.Vector3Int());
-		public bool IsStairsUp(Vector3Int p) => ForeMap.GetTile(p) == Tiles.StairsUp;
+		public bool IsStairsUp(Vector3Int p) => ForeMap.GetTile(p) == _theme.StairsUp;
 		public bool IsStairsDown(int x, int y) => IsStairsDown(new Vector3Int(x, y, 0));
 		public bool IsStairsDown(Vector2Int p) => IsStairsDown(p.Vector3Int());
-		public bool IsStairsDown(Vector3Int p) => ForeMap.GetTile(p) == Tiles.StairsDown;
+		public bool IsStairsDown(Vector3Int p) => ForeMap.GetTile(p) == _theme.StairsDown;
 		public bool IsDoor(int x, int y) => IsDoor(new Vector3Int(x, y, 0));
 		public bool IsDoor(Vector2Int p) => IsDoor(p.Vector3Int());
 		public bool IsDoor(Vector3Int p) => IsDoorOpen(p) || IsDoorShut(p);
 		public bool IsDoorOpen(int x, int y) => IsDoorOpen(new Vector3Int(x, y, 0));
 		public bool IsDoorOpen(Vector2Int p) => IsDoorOpen(p.Vector3Int());
-		public bool IsDoorOpen(Vector3Int p) => ForeMap.GetTile(p) == Tiles.DoorOpen;
+		public bool IsDoorOpen(Vector3Int p) => ForeMap.GetTile(p) == _theme.DoorOpen;
 		public bool IsDoorShut(int x, int y) => IsDoorShut(new Vector3Int(x, y, 0));
 		public bool IsDoorShut(Vector2Int p) => IsDoorShut(p.Vector3Int());
-		public bool IsDoorShut(Vector3Int p) => ForeMap.GetTile(p) == Tiles.DoorShut;
+		public bool IsDoorShut(Vector3Int p) => ForeMap.GetTile(p) == _theme.DoorShut;
 		public void ToggleDoor(Vector3Int p)
 		{
 			if (IsDoorShut(p))
-				ForeMap.SetTile(p, Tiles.DoorOpen);
+				ForeMap.SetTile(p, _theme.DoorOpen);
 			else if (IsDoorOpen(p))
-				ForeMap.SetTile(p, Tiles.DoorShut);
+				ForeMap.SetTile(p, _theme.DoorShut);
 		}
 		public bool IsBlocked(int x, int y) => IsBlocked(new Vector3Int(x, y, 0));
 		public bool IsBlocked(Vector2Int p) => IsBlocked(p.Vector3Int());
@@ -140,21 +144,21 @@ namespace ca.HenrySoftware.Rage
 		public bool IsLight(Vector2Int p) => IsLight(p.Vector3Int());
 		public bool IsLight(Vector3Int p)
 		{
-			return Tiles.Light.IndexOf(LightMap.GetTile(p)) > _lightExplored;
+			return _lightTheme.IndexOf(LightMap.GetTile(p)) > _lightExplored;
 		}
 		public bool IsLightExplored(int x, int y) => IsLightExplored(new Vector3Int(x, y, 0));
 		public bool IsLightExplored(Vector2Int p) => IsLightExplored(p.Vector3Int());
 		public bool IsLightExplored(Vector3Int p)
 		{
-			return Tiles.Light.IndexOf(LightMap.GetTile(p)) == _lightExplored;
+			return _lightTheme.IndexOf(LightMap.GetTile(p)) == _lightExplored;
 		}
 		public void SetLight(int x, int y, int index, bool test) => SetLight(new Vector3Int(x, y, 0), index, test);
 		public void SetLight(Vector2Int p, int index, bool test) => SetLight(p.Vector3Int(), index, test);
 		public void SetLight(Vector3Int p, int index, bool test)
 		{
-			var existing = Tiles.Light.IndexOf(LightMap.GetTile(p));
+			var existing = _lightTheme.IndexOf(LightMap.GetTile(p));
 			if ((test && (index > existing)) || !test)
-				LightMap.SetTile(p, Tiles.Light[index]);
+				LightMap.SetTile(p, _lightTheme[index]);
 		}
 		public void Dark(int index = _lightMin)
 		{
@@ -164,7 +168,7 @@ namespace ca.HenrySoftware.Rage
 		private void Darken()
 		{
 			foreach (var p in Bounds.allPositionsWithin)
-				if (Tiles.Light.IndexOf(LightMap.GetTile(p)) != _lightMin)
+				if (_lightTheme.IndexOf(LightMap.GetTile(p)) != _lightMin)
 					SetLight(p, _lightExplored, false);
 		}
 		private static int[,] _fovOctants =
@@ -296,7 +300,7 @@ namespace ca.HenrySoftware.Rage
 		public void FindTorches()
 		{
 			foreach (var p in ForeMap.cellBounds.allPositionsWithin)
-				if (ForeMap.GetTile(p) == Tiles.Torch)
+				if (ForeMap.GetTile(p) == _theme.Torch)
 					_torches.Add(p);
 		}
 		private int RandomTorchRadius => Utility.Random.Next(TorchRadius) + 1;
