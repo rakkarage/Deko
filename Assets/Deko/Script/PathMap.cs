@@ -287,6 +287,8 @@ namespace ca.HenrySoftware.Rage
 		public void Clear()
 		{
 			_generator = Generators.Next;
+			_theme = Themes.Next;
+			_lightTheme = LightThemes.Next;
 			foreach (var i in _layers)
 			{
 				i.ClearAllTiles();
