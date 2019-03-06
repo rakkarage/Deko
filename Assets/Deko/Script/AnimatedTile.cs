@@ -4,7 +4,7 @@ namespace UnityEngine.Tilemaps
 	[CreateAssetMenu]
 	public class AnimatedTile : TileBase
 	{
-		public Sprite[] AnimatedSprites;
+		public Sprite[] Sprites;
 		public bool RandomStartTime = true;
 		[MinMaxSlider(1, 10)]
 		public Vector2 Speed = Vector2.one;
@@ -13,17 +13,17 @@ namespace UnityEngine.Tilemaps
 		{
 			tileData.transform = Matrix4x4.identity;
 			tileData.color = Color.white;
-			if (AnimatedSprites?.Length > 0)
+			if (Sprites?.Length > 0)
 			{
-				tileData.sprite = AnimatedSprites[RandomStartTime ? Random.Range(0, AnimatedSprites.Length) : 0];
+				tileData.sprite = Sprites[RandomStartTime ? Random.Range(0, Sprites.Length) : 0];
 				tileData.colliderType = TileColliderType;
 			}
 		}
 		public override bool GetTileAnimationData(Vector3Int position, ITilemap tileMap, ref TileAnimationData tileAnimationData)
 		{
-			if (AnimatedSprites?.Length == 0)
+			if (Sprites?.Length == 0)
 				return false;
-			tileAnimationData.animatedSprites = AnimatedSprites;
+			tileAnimationData.animatedSprites = Sprites;
 			tileAnimationData.animationSpeed = Random.Range(Speed.x, Speed.y);
 			tileAnimationData.animationStartTime = RandomStartTime ? Random.value : 0;
 			return true;
