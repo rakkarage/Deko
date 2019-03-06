@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEditor.Tilemaps;
+using UnityEngine.Tilemaps;
 namespace ca.HenrySoftware.Rage
 {
 	public enum DirectionType

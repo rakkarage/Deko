@@ -1,6 +1,4 @@
-﻿using System;
-using UnityEditor.Tilemaps;
-namespace UnityEngine.Tilemaps
+﻿namespace UnityEngine.Tilemaps
 {
 	[CreateAssetMenu]
 	public class RandomTile : TileBase
