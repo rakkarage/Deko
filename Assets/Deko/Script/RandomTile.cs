@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEditor.Tilemaps;
 namespace UnityEngine.Tilemaps
 {
 	[CreateAssetMenu]
