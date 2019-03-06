@@ -6,7 +6,6 @@ namespace ca.HenrySoftware.Rage
 	[ExecuteInEditMode]
 	public class PathMap : MonoBehaviour
 	{
-		public PathTiles Tiles;
 		public WeightedGenerator Generators;
 		private PathGenerator _generator;
 		public WeightedTheme Themes;
