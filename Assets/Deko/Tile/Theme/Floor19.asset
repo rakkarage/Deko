@@ -10,12 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe9e3e33b044f8c4f9395d54a34f9222, type: 3}
-  m_Name: PillarRuin
+  m_Name: Floor19
   m_EditorClassIdentifier: 
-  orientation: 1
+  orientation: 0
   Tiles:
-    Items:
-    - {fileID: 11400000, guid: b6476fe52c3832d45bae2a8a2b20ff5e, type: 2}
-    - {fileID: 11400000, guid: 281f17618b9b01d4dacf7f2fdf864b71, type: 2}
-    - {fileID: 11400000, guid: 9e23f6e415991b14080a74b0d3de3856, type: 2}
-    Probabilities: 
+    Items: []
+    Weights: 

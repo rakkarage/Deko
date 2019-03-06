@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe9e3e33b044f8c4f9395d54a34f9222, type: 3}
-  m_Name: Floor1
+  m_Name: Floor11
   m_EditorClassIdentifier: 
-  orientation: -1
+  orientation: 0
   Tiles:
     Items: []
     Weights: 
