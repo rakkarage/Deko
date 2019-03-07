@@ -2,22 +2,17 @@
 namespace UnityEngine.Tilemaps
 {
 	[CreateAssetMenu]
-	public class AnimatedTile : TileBase
+	public class AnimatedTile : OrientedTile
 	{
 		public Sprite[] Sprites;
 		public bool RandomStartTime = true;
 		[MinMaxSlider(1, 10)]
 		public Vector2 Speed = Vector2.one;
-		public Tile.ColliderType TileColliderType;
 		public override void GetTileData(Vector3Int position, ITilemap tileMap, ref TileData tileData)
 		{
-			tileData.transform = Matrix4x4.identity;
-			tileData.color = Color.white;
 			if (Sprites?.Length > 0)
-			{
 				tileData.sprite = Sprites[RandomStartTime ? Random.Range(0, Sprites.Length) : 0];
-				tileData.colliderType = TileColliderType;
-			}
+			base.GetTileData(position, tileMap, ref tileData);
 		}
 		public override bool GetTileAnimationData(Vector3Int position, ITilemap tileMap, ref TileAnimationData tileAnimationData)
 		{
