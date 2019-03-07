@@ -14,6 +14,7 @@ namespace UnityEngine.Tilemaps
 		{
 			tileData.flags = TileFlags.LockTransform;
 			tileData.transform = NextMatrix;
+			base.GetTileData(position, tilemap, ref tileData);
 		}
 	}
 }

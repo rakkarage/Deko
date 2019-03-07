@@ -6,9 +6,9 @@ using UnityEngine.Tilemaps;
 namespace ca.HenrySoftware.Deko
 {
 	[Serializable]
-	public class WeightedSprite : Weighted<Sprite> { }
+	public class WeightedTile : Weighted<TileBase> { }
 	[Serializable]
-	public class WeightedSpriteList : Weighted<List<Sprite>> { }
+	public class WeightedTileList : Weighted<List<TileBase>> { }
 	[Serializable]
 	public class WeightedGenerator : Weighted<PathGenerator> { }
 	[Serializable]

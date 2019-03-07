@@ -11,8 +11,8 @@ namespace ca.HenrySoftware.Deko
 		private bool _mixRoomFloor;
 		public WeightedTheme Themes;
 		private Theme _theme;
-		public WeightedSpriteList LightThemes;
-		private List<Sprite> _lightTheme;
+		public WeightedTileList LightThemes;
+		private List<TileBase> _lightTheme;
 		public Tilemap BackMap;
 		public Tilemap WaterBackMap;
 		public Tilemap ItemBackMap;
