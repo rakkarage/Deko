@@ -15,8 +15,8 @@ namespace ca.HenrySoftware.Deko
 		private PathNode _current;
 		public List<Vector3Int> Path = new List<Vector3Int>();
 		public int SortingOrder = 1;
-		public PathManager Manager;
-		public PathMap Map;
+		public Manager Manager;
+		public Map Map;
 		private Pool _pool;
 		private int _opacityStep = 0;
 		private const int _opacityStart = 64;

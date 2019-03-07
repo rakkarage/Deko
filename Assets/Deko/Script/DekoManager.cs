@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 namespace ca.HenrySoftware.Deko
 {
-	public class PathManager : MonoBehaviour,
+	public class Manager : MonoBehaviour,
 		IPointerClickHandler,
 		IPinchHandler, IEndPinchHandler,
 		IBeginDragHandler, IDragHandler, IEndDragHandler
@@ -13,10 +13,10 @@ namespace ca.HenrySoftware.Deko
 		public float ZoomMinMin = .8f;
 		public float ZoomMax = 32f;
 		public float ZoomMaxMax = 40f;
-		public PathMob Character;
+		public Mob Character;
 		public PathFinder Finder;
 		public PathTarget Target;
-		public PathMap Map;
+		public Map Map;
 		public MiniMap MiniMap;
 		private bool _drag = false;
 		private float _totalTime = 0f;

@@ -4,11 +4,11 @@ using UnityEngine;
 namespace ca.HenrySoftware.Deko
 {
 	[RequireComponent(typeof(Animator))]
-	public class PathMob : MonoBehaviour
+	public class Mob : MonoBehaviour
 	{
 		public List<Vector3Int> Path;
 		private Animator _animator;
-		public PathManager Manager;
+		public Manager Manager;
 		private Transform _t;
 		private void Awake()
 		{

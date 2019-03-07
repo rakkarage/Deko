@@ -4,7 +4,7 @@ namespace ca.HenrySoftware.Deko
 	[RequireComponent(typeof(SpriteRenderer))]
 	public class MiniMap : MonoBehaviour
 	{
-		public PathManager Manager;
+		public Manager Manager;
 		private Transform _t;
 		private SpriteRenderer _sr;
 		private const float _scale = 20f;

@@ -4,10 +4,10 @@ using UnityEngine.Tilemaps;
 namespace ca.HenrySoftware.Deko
 {
 	[ExecuteInEditMode]
-	public class PathMap : MonoBehaviour
+	public class Map : MonoBehaviour
 	{
 		public WeightedGenerator Generators;
-		private PathGenerator _generator;
+		private Generator _generator;
 		private bool _mixRoomFloor;
 		public WeightedTheme Themes;
 		private Theme _theme;
