@@ -6,6 +6,7 @@ art: benmhenry@gmail.com
 
 ## Todo
 
+- remove randomFlip from animation
 - make 2d-extras pull requests for randomTile etc
 - save & load? (odin serializer? not working on linux?)
 - add free items etc to free
