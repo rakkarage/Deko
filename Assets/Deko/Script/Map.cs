@@ -323,6 +323,7 @@ namespace ca.HenrySoftware.Deko
 		private List<Vector3Int> _torches = new List<Vector3Int>();
 		public void FindTorches()
 		{
+			if (_theme == null) return;
 			foreach (var p in ForeMap.cellBounds.allPositionsWithin)
 				if (ForeMap.GetTile(p) == _theme.Torch)
 					_torches.Add(p);
