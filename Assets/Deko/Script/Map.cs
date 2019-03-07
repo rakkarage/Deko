@@ -304,6 +304,7 @@ namespace ca.HenrySoftware.Deko
 					SetFloor(x, y);
 				}
 			}
+			BackMap.RefreshAllTiles();
 		}
 		[ContextMenu("Clear")]
 		public void Clear()
