@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
   m_Name: WallTorch24
   m_EditorClassIdentifier: 
+  Orientation: 1
   Sprites:
   - {fileID: -8296622164665827404, guid: 448258cde4fb93359861b3bf19e4804b, type: 3}
   - {fileID: -2888784178581112041, guid: 448258cde4fb93359861b3bf19e4804b, type: 3}
