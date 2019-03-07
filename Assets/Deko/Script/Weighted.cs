@@ -1,14 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 using UnityEngine.Tilemaps;
 namespace ca.HenrySoftware.Deko
 {
-
 	[Serializable]
-	public class WeightedTile : Weighted<TileBase> { }
+	public class WeightedSprite : Weighted<Sprite> { }
 	[Serializable]
-	public class WeightedTileList : Weighted<List<TileBase>> { }
+	public class WeightedSpriteList : Weighted<List<Sprite>> { }
 	[Serializable]
 	public class WeightedGenerator : Weighted<PathGenerator> { }
 	[Serializable]

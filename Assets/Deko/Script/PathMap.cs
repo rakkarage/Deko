@@ -11,8 +11,8 @@ namespace ca.HenrySoftware.Deko
 		private bool _mixRoomFloor;
 		public WeightedTheme Themes;
 		private Theme _theme;
-		public WeightedTileList LightThemes;
-		private List<TileBase> _lightTheme;
+		public WeightedSpriteList LightThemes;
+		private List<Sprite> _lightTheme;
 		public Tilemap BackMap;
 		public Tilemap WaterBackMap;
 		public Tilemap ItemBackMap;
@@ -161,21 +161,25 @@ namespace ca.HenrySoftware.Deko
 		public bool IsLight(Vector2Int p) => IsLight(p.Vector3Int());
 		public bool IsLight(Vector3Int p)
 		{
-			return _lightTheme.IndexOf(LightMap.GetTile(p)) > _lightExplored;
+			var tile = LightMap.GetTile(p) as LightTile;
+			if (!tile) return false;
+			return tile.Level > _lightExplored;
 		}
 		public bool IsLightExplored(int x, int y) => IsLightExplored(new Vector3Int(x, y, 0));
 		public bool IsLightExplored(Vector2Int p) => IsLightExplored(p.Vector3Int());
 		public bool IsLightExplored(Vector3Int p)
 		{
-			return _lightTheme.IndexOf(LightMap.GetTile(p)) == _lightExplored;
+			var tile = LightMap.GetTile(p) as LightTile;
+			if (!tile) return false;
+			return tile.Level == _lightExplored;
 		}
 		public void SetLight(int x, int y, int index, bool test) => SetLight(new Vector3Int(x, y, 0), index, test);
 		public void SetLight(Vector2Int p, int index, bool test) => SetLight(p.Vector3Int(), index, test);
 		public void SetLight(Vector3Int p, int index, bool test)
 		{
-			var existing = _lightTheme.IndexOf(LightMap.GetTile(p));
-			if ((test && (index > existing)) || !test)
-				LightMap.SetTile(p, _lightTheme[index]);
+			var tile = LightMap.GetTile(p) as LightTile;
+			if (!test || (index > tile.Level))
+				tile.Level = index;
 		}
 		public void Dark(int index = _lightMin)
 		{
@@ -185,8 +189,11 @@ namespace ca.HenrySoftware.Deko
 		private void Darken()
 		{
 			foreach (var p in Bounds.allPositionsWithin)
-				if (_lightTheme.IndexOf(LightMap.GetTile(p)) != _lightMin)
-					SetLight(p, _lightExplored, false);
+			{
+				var tile = LightMap.GetTile(p) as LightTile;
+				if (tile != null && tile.Level != _lightMin)
+					tile.Level = _lightExplored;
+			}
 		}
 		private static int[,] _fovOctants =
 		{
