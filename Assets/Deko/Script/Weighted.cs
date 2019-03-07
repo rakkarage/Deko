@@ -8,7 +8,7 @@ namespace ca.HenrySoftware.Deko
 	[Serializable]
 	public class WeightedTile : Weighted<TileBase> { }
 	[Serializable]
-	public class WeightedTileList : Weighted<List<TileBase>> { }
+	public class WeightedLightTheme : Weighted<LightTheme> { }
 	[Serializable]
 	public class WeightedGenerator : Weighted<Generator> { }
 	[Serializable]

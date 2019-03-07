@@ -3,10 +3,8 @@ using UnityEngine.Tilemaps;
 namespace ca.HenrySoftware.Deko
 {
 	[CreateAssetMenu]
-	public class LightTile : TileBase
+	public class LightTheme : ScriptableObject
 	{
-		public LightTheme Theme;
-		public int Level;
-		public bool Explored;
+		public Sprite[] Levels;
 	}
 }
