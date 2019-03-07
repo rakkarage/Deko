@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baafd71f6ad9abf1ead7b68d896b1d23, type: 3}
   m_Name: Theme5
   m_EditorClassIdentifier: 
-  FloorSimple: {fileID: 0}
-  FloorRoom: {fileID: 0}
-  Floor: {fileID: 0}
-  StairsDown: {fileID: 0}
-  StairsUp: {fileID: 0}
-  DoorShut: {fileID: 0}
-  DoorOpen: {fileID: 0}
-  Torch: {fileID: 0}
-  WallSimple: {fileID: 0}
-  Wall: {fileID: 0}
+  FloorSimple: {fileID: 11400000, guid: 4e9176b9beccad4739d93c92476e6e07, type: 2}
+  FloorRoom: {fileID: 11400000, guid: 8b7153889e4280e4db89ab7e190b6001, type: 2}
+  StairDown: {fileID: 11400000, guid: 8b9b74c0eccfb4ab68a74d7db4ef50fa, type: 2}
+  StairUp: {fileID: 11400000, guid: 891bbfdcf91b5090a8256cb0d336922b, type: 2}
+  DoorShut: {fileID: 11400000, guid: 66d5ed66cb237528aa599c4b239a39f9, type: 2}
+  DoorOpen: {fileID: 11400000, guid: 2bfc4ce0521a0c43b99cdd62af1adf0a, type: 2}
+  DoorBroke: {fileID: 11400000, guid: 4ce642277daebee5f8390b2ef5473d13, type: 2}
+  Torch: {fileID: 11400000, guid: 9bb4e558c9dd29aefbbf1241c542d145, type: 2}
+  WallSimple: {fileID: 11400000, guid: cf238747eca72d39598e265764ed9b86, type: 2}
+  WallRoom: {fileID: 11400000, guid: 4e9c3fcac3d8b77ee87cc7da27cd3bb1, type: 2}
