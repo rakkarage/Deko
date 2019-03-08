@@ -177,7 +177,7 @@ namespace ca.HenrySoftware.Deko
 			if (!test || (index > tile.Level))
 				tile.Level = index;
 		}
-		public void Dark(int index = _lightMin)
+		public void Dark()
 		{
 			foreach (var p in Bounds.allPositionsWithin)
 				LightMap.SetTile(p, _lightTile);
@@ -297,10 +297,12 @@ namespace ca.HenrySoftware.Deko
 			{
 				for (var x = 0; x < _generator.Width; x++)
 				{
-					SetFloor(x, y);
+					var p = new Vector3Int(x, y, 0);
+					LightMap.SetTile(p, _lightTile);
+					SetFloor(p);
 					if (x == 0 || x == _generator.Width - 1 ||
 						y == 0 || y == _generator.Height - 1)
-						SetWall(x, y);
+						SetWall(p);
 				}
 			}
 			BackMap.RefreshAllTiles();
