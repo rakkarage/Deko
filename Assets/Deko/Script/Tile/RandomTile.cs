@@ -14,9 +14,9 @@ namespace UnityEngine.Tilemaps
 		public WeightedTile Tiles;
 		public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData)
 		{
-			tileData.transform = NextMatrix;
-			tileData.flags = TileFlags.LockAll;
 			Tiles.Next.GetTileData(position, tilemap, ref tileData);
+			tileData.flags = TileFlags.LockAll;
+			tileData.transform = NextMatrix;
 		}
 	}
 }
