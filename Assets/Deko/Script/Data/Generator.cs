@@ -7,6 +7,8 @@ namespace ca.HenrySoftware.Deko
 		public int Width = 16;
 		public int Height = 16;
 		[Range(0, 1)]
+		public float AllRoomFloorChance = .01f;
+		[Range(0, 1)]
 		public float MixRoomFloorChance = .1f;
 		[Range(0, 1)]
 		public float RoomFloorChance = .333f;

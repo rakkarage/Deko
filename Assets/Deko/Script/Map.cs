@@ -9,6 +9,7 @@ namespace ca.HenrySoftware.Deko
 		public WeightedGenerator Generators;
 		private Generator _generator;
 		private bool _mixRoomFloor;
+		private bool _allRoomFloor;
 		public WeightedTheme Themes;
 		private Theme _theme;
 		public WeightedLightTheme LightThemes;
@@ -56,13 +57,8 @@ namespace ca.HenrySoftware.Deko
 		public void SetFloor(Vector2Int p) => SetFloor(p.Vector3Int());
 		public void SetFloor(Vector3Int p)
 		{
-			if (_mixRoomFloor)
-			{
-				if (_generator.RoomFloorChance < Utility.Random.NextFloat())
-					SetFloorRoom(p);
-				else
-					SetFloorSimple(p);
-			}
+			if (_allRoomFloor || (_mixRoomFloor && Utility.Random.NextPercent(_generator.RoomFloorChance)))
+				SetFloorRoom(p);
 			else
 				SetFloorSimple(p);
 		}
@@ -71,7 +67,7 @@ namespace ca.HenrySoftware.Deko
 		public bool IsWall(Vector3Int p)
 		{
 			var tile = BackMap.GetTile(p);
-			return tile == _theme.WallSimple || tile == _theme.WallRoom;
+			return tile == _theme.WallSimple || tile == _theme.WallRoom || tile == _theme.Torch;
 		}
 		public void SetWall(int x, int y) => SetWall(new Vector3Int(x, y, 0));
 		public void SetWall(Vector2Int p) => SetWall(p.Vector3Int());
@@ -302,15 +298,20 @@ namespace ca.HenrySoftware.Deko
 				for (var x = 0; x < _generator.Width; x++)
 				{
 					SetFloor(x, y);
+					if (x == 0 || x == _generator.Width - 1 ||
+						y == 0 || y == _generator.Height - 1)
+						SetWall(x, y);
 				}
 			}
 			BackMap.RefreshAllTiles();
+			ForeMap.RefreshAllTiles();
 		}
 		[ContextMenu("Clear")]
 		public void Clear()
 		{
 			_generator = Generators.Next;
-			_mixRoomFloor = _generator.MixRoomFloorChance < Utility.Random.NextFloat();
+			_mixRoomFloor = Utility.Random.NextPercent(_generator.MixRoomFloorChance);
+			_allRoomFloor = Utility.Random.NextPercent(_generator.AllRoomFloorChance);
 			_theme = Themes.Next;
 			_lightTheme = LightThemes.Next;
 			foreach (var i in _layers)
