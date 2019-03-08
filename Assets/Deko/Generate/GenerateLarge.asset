@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 495c86cfbcc30dddf9cdf0cd8b95d5a7, type: 3}
   m_Name: GenerateLarge
   m_EditorClassIdentifier: 
-  Width: 33
-  Height: 33
+  Width: 15
+  Height: 15
+  AllRoomFloorChance: 0.01
   MixRoomFloorChance: 0
   RoomFloorChance: 0.333
   RoomWallChance: 0.333
