@@ -5,8 +5,12 @@ namespace ca.HenrySoftware.Deko
 	[CreateAssetMenu]
 	public class LightTile : TileBase
 	{
-		public LightTheme Theme;
+		public Sprite[] Levels;
 		public int Level;
-		public bool Explored;
+		// public bool Explored;
+		public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData)
+		{
+			tileData.sprite = Levels[Level];
+		}
 	}
 }

@@ -12,8 +12,8 @@ namespace ca.HenrySoftware.Deko
 		private bool _allRoomFloor;
 		public WeightedTheme Themes;
 		private Theme _theme;
-		public WeightedLightTheme LightThemes;
-		private LightTheme _lightTheme;
+		public WeightedLightTile LightTiles;
+		private LightTile _lightTile;
 		public Tilemap BackMap;
 		public Tilemap WaterBackMap;
 		public Tilemap ItemBackMap;
@@ -174,13 +174,18 @@ namespace ca.HenrySoftware.Deko
 		public void SetLight(Vector3Int p, int index, bool test)
 		{
 			var tile = LightMap.GetTile(p) as LightTile;
+			if (tile == null)
+				Debug.Log("LightError");
+			// TODO: need to setup light? this is called from setup light
 			if (!test || (index > tile.Level))
 				tile.Level = index;
 		}
 		public void Dark(int index = _lightMin)
 		{
-			foreach (var p in Bounds.allPositionsWithin)
-				SetLight(p, index, false);
+			// _lightTheme
+			// foreach (var p in Bounds.allPositionsWithin)
+			// LightMap.SetTile(LightTheme)
+			// 	SetLight(p, index, false);
 		}
 		private void Darken()
 		{
@@ -313,7 +318,7 @@ namespace ca.HenrySoftware.Deko
 			_mixRoomFloor = Utility.Random.NextPercent(_generator.MixRoomFloorChance);
 			_allRoomFloor = Utility.Random.NextPercent(_generator.AllRoomFloorChance);
 			_theme = Themes.Next;
-			_lightTheme = LightThemes.Next;
+			_lightTile = LightTiles.Next;
 			foreach (var i in _layers)
 			{
 				i.ClearAllTiles();

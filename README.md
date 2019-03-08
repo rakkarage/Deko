@@ -9,7 +9,6 @@ art: benmhenry@gmail.com
 
 ## Todo
 
-- remove light tile!?
 - chance to not flip or rotate!?
 - custom icon and preview for RandomTile etc?
 - generate levels
