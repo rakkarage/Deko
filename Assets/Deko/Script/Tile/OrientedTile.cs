@@ -12,9 +12,7 @@ namespace UnityEngine.Tilemaps
 			new Vector3(FlipX ? -1f : 1f, FlipY ? -1f : 1f, 1f));
 		public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData)
 		{
-			tileData.flags = TileFlags.LockTransform;
 			tileData.transform = NextMatrix;
-			base.GetTileData(position, tilemap, ref tileData);
 		}
 	}
 }
