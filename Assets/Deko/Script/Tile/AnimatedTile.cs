@@ -2,7 +2,7 @@
 namespace UnityEngine.Tilemaps
 {
 	[CreateAssetMenu]
-	public class AnimatedTile : OrientedTile
+	public class AnimatedTile : TileBase
 	{
 		public Sprite[] Sprites;
 		public bool RandomStartTime = true;
@@ -12,7 +12,6 @@ namespace UnityEngine.Tilemaps
 		{
 			if (Sprites?.Length > 0)
 				tileData.sprite = Sprites[RandomStartTime ? Random.Range(0, Sprites.Length) : 0];
-			base.GetTileData(position, tilemap, ref tileData);
 		}
 		public override bool GetTileAnimationData(Vector3Int position, ITilemap tileMap, ref TileAnimationData tileAnimationData)
 		{

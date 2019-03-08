@@ -12,6 +12,7 @@ art: benmhenry@gmail.com
 - remove transform lock if not needed!?
 - remove randomFlip from animation!? cuz torch gets placed and randomized by randm tile anyway! should be moved to theme with other shit?
 - remove light tile!?
+- custom icon and preview for RandomTile etc?
 - generate levels
 - save & load? (odin serializer? not working on linux?)
 - mobs
