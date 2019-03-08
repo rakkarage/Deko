@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a20bf88aeb70ba93590adfdfc41b3c98, type: 3}
   m_Name: Light2
   m_EditorClassIdentifier: 
+  Level: 31
   Levels:
   - {fileID: -912337492112698906, guid: ddce639a415cc8f0cb8a8446015dbd0e, type: 3}
   - {fileID: 414148215678456024, guid: ddce639a415cc8f0cb8a8446015dbd0e, type: 3}
@@ -45,4 +46,3 @@ MonoBehaviour:
   - {fileID: 7455604659617429439, guid: ddce639a415cc8f0cb8a8446015dbd0e, type: 3}
   - {fileID: -8459391802171327932, guid: ddce639a415cc8f0cb8a8446015dbd0e, type: 3}
   - {fileID: 8288771700026138584, guid: ddce639a415cc8f0cb8a8446015dbd0e, type: 3}
-  Level: 0
