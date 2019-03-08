@@ -67,7 +67,7 @@ namespace ca.HenrySoftware.Deko
 		public bool IsWall(Vector3Int p)
 		{
 			var tile = BackMap.GetTile(p);
-			return tile == _theme.WallSimple || tile == _theme.WallRoom || tile == _theme.Torch;
+			return tile != null && (tile == _theme.WallSimple || tile == _theme.WallRoom || tile == _theme.Torch);
 		}
 		public void SetWall(int x, int y) => SetWall(new Vector3Int(x, y, 0));
 		public void SetWall(Vector2Int p) => SetWall(p.Vector3Int());
@@ -158,23 +158,21 @@ namespace ca.HenrySoftware.Deko
 		public bool IsLight(Vector3Int p)
 		{
 			var tile = LightMap.GetTile(p) as LightTile;
-			if (!tile) return false;
-			return tile.Level > _lightExplored;
+			return tile != null && tile.Level > _lightExplored;
 		}
 		public bool IsLightExplored(int x, int y) => IsLightExplored(new Vector3Int(x, y, 0));
 		public bool IsLightExplored(Vector2Int p) => IsLightExplored(p.Vector3Int());
 		public bool IsLightExplored(Vector3Int p)
 		{
 			var tile = LightMap.GetTile(p) as LightTile;
-			if (!tile) return false;
-			return tile.Level == _lightExplored;
+			return tile != null && tile.Level == _lightExplored;
 		}
 		public void SetLight(int x, int y, int index, bool test) => SetLight(new Vector3Int(x, y, 0), index, test);
 		public void SetLight(Vector2Int p, int index, bool test) => SetLight(p.Vector3Int(), index, test);
 		public void SetLight(Vector3Int p, int index, bool test)
 		{
 			var tile = LightMap.GetTile(p) as LightTile;
-			if (!test || (index > tile.Level))
+			if (tile != null && (!test || (index > tile.Level)))
 				tile.Level = index;
 		}
 		public void Dark()
