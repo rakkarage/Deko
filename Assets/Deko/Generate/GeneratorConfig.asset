@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07f8e287881f86f09bb3ad41a084d954, type: 3}
+  m_Name: GeneratorConfig
+  m_EditorClassIdentifier: 
+  Themes:
+    Items:
+    - {fileID: 11400000, guid: 7534e434f2a5ab9ca90fc689c580d7d4, type: 2}
+    - {fileID: 11400000, guid: aa04e2565baebf749bd4d0f489acbf6a, type: 2}
+    - {fileID: 11400000, guid: f0fb33dbf7ac4fd1e8826e26da674f19, type: 2}
+    - {fileID: 11400000, guid: 3198c1f014eacdd4db65e1a8b6d2cac3, type: 2}
+    - {fileID: 11400000, guid: 64c6530347cc665e4b1c86c73ab243de, type: 2}
+    - {fileID: 11400000, guid: 62cf9a2514432724da39b17ae977917e, type: 2}
+    - {fileID: 11400000, guid: 90cab81fed6ef25fea734e2f70299545, type: 2}
+    - {fileID: 11400000, guid: d71fc693ddde4818897c3ddf0a4b9f78, type: 2}
+    - {fileID: 11400000, guid: 0fd7d10e46caf348cb472bac55de752b, type: 2}
+    - {fileID: 11400000, guid: 4225ef2008c5bb0a9b84b00cad4285e2, type: 2}
+    - {fileID: 11400000, guid: 193b5a12e8bf32d4491078499147e3fb, type: 2}
+    - {fileID: 11400000, guid: 34331af5cf9cbadef891bee2e6a09a95, type: 2}
+    - {fileID: 11400000, guid: ee312a9b1fa206a0ead82d6c51eed6c2, type: 2}
+    - {fileID: 11400000, guid: 62a3d25d778c3cbd49ab9f95fbbaa614, type: 2}
+    - {fileID: 11400000, guid: 0f4acffe0a509a7628da9b7d94ad4432, type: 2}
+    - {fileID: 11400000, guid: 8326b40a4df501b91969762675d098c2, type: 2}
+    - {fileID: 11400000, guid: 7f5e5ca7810a67283a1f19440a2a5781, type: 2}
+    - {fileID: 11400000, guid: 761be01c4b7f9923799964c58d774fba, type: 2}
+    - {fileID: 11400000, guid: 4514ffecd45fd468c9b65cffa8ca8ff8, type: 2}
+    - {fileID: 11400000, guid: 540ed05426c47bdd385125bac4595f73, type: 2}
+    - {fileID: 11400000, guid: 071de5e418495f7a8b926e0ef9cc56fe, type: 2}
+    - {fileID: 11400000, guid: 24e0b899f91c08d2c99fd1cd26172036, type: 2}
+    - {fileID: 11400000, guid: 5771f805a6dfd1e378e114d42bf1978f, type: 2}
+    - {fileID: 11400000, guid: f3c6f9584618c1e879f464851525a527, type: 2}
+    - {fileID: 11400000, guid: 7ad3c0362d4ac9cb69199dd4b9f8187e, type: 2}
+    - {fileID: 11400000, guid: a7b90f2809de3a73cba4f59268272585, type: 2}
+    - {fileID: 11400000, guid: 26865ad551856c490a39211c3a24e934, type: 2}
+    - {fileID: 11400000, guid: ab3ca020c7743ab418ea69f4e5555d39, type: 2}
+    - {fileID: 11400000, guid: 4a18e45cb4258c708bf576df3e5ace36, type: 2}
+    Weights: 
+  Generators:
+    Items:
+    - {fileID: 11400000, guid: 4fa4f9b94a6b84f98a1a48f75504316c, type: 2}
+    - {fileID: 11400000, guid: cff04a1508e9e8e4f838ee241a2539e8, type: 2}
+    - {fileID: 11400000, guid: 08145f051c98cf5c3a1399adb922ecf2, type: 2}
+    - {fileID: 11400000, guid: 067793ff99c8975c28f9fb3fe8ddda7e, type: 2}
+    Weights: 
+  WallTorchChance: 0.01

@@ -73,8 +73,16 @@ namespace ca.HenrySoftware.Deko
 		public void SetWall(Vector2Int p) => SetWall(p.Vector3Int());
 		public void SetWall(Vector3Int p)
 		{
-			if (_generator.RoomWallChance < Utility.Random.NextFloat())
-				ForeMap.SetTile(p, _theme.WallRoom);
+			if (Utility.Random.NextPercent(_generator.RoomWallChance))
+			{
+				// todo: store torch chance setting somewhere good
+				//  a global GeneratorConfig
+				// todo: flip torch???
+				if (Utility.Random.NextPercent(.5))
+					ForeMap.SetTile(p, _theme.Torch);
+				else
+					ForeMap.SetTile(p, _theme.WallRoom);
+			}
 			else
 				SetWallSimple(p);
 		}
