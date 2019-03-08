@@ -7,11 +7,10 @@ art: benmhenry@gmail.com
 ## Todo
 
 - remove randomFlip from animation!? cuz torch gets placed and randomized by randm tile anyway! should be moved to theme with other shit?
+- sometimes use all room tiles instead of mix
 - remove light tile!?
-- make 2d-extras pull requests for randomTile etc
-- save & load? (odin serializer? not working on linux?)
-- add free items etc to free
 - generate levels
+- save & load? (odin serializer? not working on linux?)
 - mobs
 
 ## Bugs
