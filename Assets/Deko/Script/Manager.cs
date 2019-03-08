@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 namespace ca.HenrySoftware.Deko
 {
-	public class DekoManager : MonoBehaviour,
+	public class Manager : MonoBehaviour,
 		IPointerClickHandler,
 		IPinchHandler, IEndPinchHandler,
 		IBeginDragHandler, IDragHandler, IEndDragHandler
