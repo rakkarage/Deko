@@ -174,18 +174,13 @@ namespace ca.HenrySoftware.Deko
 		public void SetLight(Vector3Int p, int index, bool test)
 		{
 			var tile = LightMap.GetTile(p) as LightTile;
-			if (tile == null)
-				Debug.Log("LightError");
-			// TODO: need to setup light? this is called from setup light
 			if (!test || (index > tile.Level))
 				tile.Level = index;
 		}
 		public void Dark(int index = _lightMin)
 		{
-			// _lightTheme
-			// foreach (var p in Bounds.allPositionsWithin)
-			// LightMap.SetTile(LightTheme)
-			// 	SetLight(p, index, false);
+			foreach (var p in Bounds.allPositionsWithin)
+				LightMap.SetTile(p, _lightTile);
 		}
 		private void Darken()
 		{
@@ -310,6 +305,7 @@ namespace ca.HenrySoftware.Deko
 			}
 			BackMap.RefreshAllTiles();
 			ForeMap.RefreshAllTiles();
+			LightMap.RefreshAllTiles();
 		}
 		[ContextMenu("Clear")]
 		public void Clear()
