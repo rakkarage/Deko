@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 535f8e525ff367c4ba67961e201a05ed, type: 3}
   m_Name: WallSimple19
   m_EditorClassIdentifier: 
-  Orientation: 0
+  Orientation: 1
   Tiles:
     Items:
     - {fileID: 11400000, guid: bad49e48d167c6bf2bc300d883783ff6, type: 2}

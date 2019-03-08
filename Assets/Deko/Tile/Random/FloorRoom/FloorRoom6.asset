@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 535f8e525ff367c4ba67961e201a05ed, type: 3}
   m_Name: FloorRoom6
   m_EditorClassIdentifier: 
-  Orientation: 0
+  Orientation: -1
   Tiles:
     Items:
     - {fileID: 11400000, guid: f1aa5f0a36e267c22be5bef4883da8fc, type: 2}
