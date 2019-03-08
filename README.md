@@ -9,6 +9,10 @@ art: benmhenry@gmail.com
 
 ## Todo
 
+- torch animation!?
+  - need to set AnimationTiles instead of RandomTile
+- test torch random start time!?
+- new way to do light? set one sets all!?
 - chance to not flip or rotate!?
 - custom icon and preview for RandomTile etc?
 - generate levels

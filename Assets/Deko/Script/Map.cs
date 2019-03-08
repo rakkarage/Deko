@@ -66,7 +66,7 @@ namespace ca.HenrySoftware.Deko
 		public bool IsWall(Vector2Int p) => IsWall(p.Vector3Int());
 		public bool IsWall(Vector3Int p)
 		{
-			var tile = BackMap.GetTile(p);
+			var tile = ForeMap.GetTile(p);
 			return tile != null && (tile == _theme.WallSimple || tile == _theme.WallRoom || tile == _theme.Torch);
 		}
 		public void SetWall(int x, int y) => SetWall(new Vector3Int(x, y, 0));
@@ -74,13 +74,13 @@ namespace ca.HenrySoftware.Deko
 		public void SetWall(Vector3Int p)
 		{
 			if (_generator.RoomWallChance < Utility.Random.NextFloat())
-				BackMap.SetTile(p, _theme.WallRoom);
+				ForeMap.SetTile(p, _theme.WallRoom);
 			else
 				SetWallSimple(p);
 		}
 		public void SetWallSimple(int x, int y) => SetWallSimple(new Vector3Int(x, y, 0));
 		public void SetWallSimple(Vector2Int p) => SetWallSimple(p.Vector3Int());
-		public void SetWallSimple(Vector3Int p) => BackMap.SetTile(p, _theme.WallSimple);
+		public void SetWallSimple(Vector3Int p) => ForeMap.SetTile(p, _theme.WallSimple);
 		public bool IsStairs(int x, int y) => IsStairs(new Vector3Int(x, y, 0));
 		public bool IsStairs(Vector2Int p) => IsStairs(p.Vector3Int());
 		public bool IsStairs(Vector3Int p) => IsStairsUp(p) || IsStairsDown(p);
@@ -283,10 +283,10 @@ namespace ca.HenrySoftware.Deko
 			_layers.Add(ForeMap);
 			_layers.Add(ItemForeMap);
 			_layers.Add(LightMap);
+			Generate();
 			FindTorches();
 			LightTorches();
 		}
-
 		[ContextMenu("Generate")]
 		public void Generate()
 		{
