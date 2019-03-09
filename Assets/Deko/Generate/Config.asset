@@ -64,6 +64,6 @@ MonoBehaviour:
   AllRoomFloor: 0
   MixRoomFloorChance: 0.1
   MixRoomFloor: 0
-  RoomFloorChance: 0.333
-  RoomWallChance: 0.333
-  WallTorchChance: 0.333
+  RoomFloorChance: 0.1
+  RoomWallChance: 0.1
+  WallTorchChance: 0.1

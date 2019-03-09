@@ -11,19 +11,19 @@ namespace ca.HenrySoftware.Deko
 		public WeightedLightTile LightTiles;
 		public LightTile LightTile;
 		[Range(0, 1)]
-		public float AllRoomFloorChance = .01f;
+		public float AllRoomFloorChance = .1f;
 		public bool AllRoomFloor;
 		[Range(0, 1)]
 		public float MixRoomFloorChance = .1f;
 		public bool MixRoomFloor;
 		[Range(0, 1)]
-		public float RoomFloorChance = .333f;
+		public float RoomFloorChance = .1f;
 		public bool RoomFloor => Utility.Random.NextPercent(RoomFloorChance);
 		[Range(0, 1)]
-		public float RoomWallChance = .333f;
+		public float RoomWallChance = .1f;
 		public bool RoomWall => Utility.Random.NextPercent(RoomWallChance);
 		[Range(0, 1)]
-		public float WallTorchChance = .333f;
+		public float WallTorchChance = .1f;
 		public bool WallTorch => Utility.Random.NextPercent(WallTorchChance);
 		[ContextMenu("Roll")]
 		public void Roll()
