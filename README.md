@@ -9,11 +9,10 @@ art: benmhenry@gmail.com
 
 ## Todo
 
-- test torch random start time!?
-  - test flip torch
 - new way to do light? set one sets all!?
 - chance to not flip or rotate!?
 - custom icon and preview for RandomTile etc?
+- test drag snap
 - generate levels
 - save & load? (odin serializer? not working on linux?)
 - mobs
