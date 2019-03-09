@@ -9,7 +9,7 @@ namespace ca.HenrySoftware.Deko
 		public WeightedTheme Themes;
 		public Theme Theme;
 		public WeightedLightTheme LightThemes;
-		public List<TileBase> LightTheme;
+		public LightTheme LightTheme;
 		public WeightedGenerator Generators;
 		public Generator Generator;
 		[Range(0, 1)]

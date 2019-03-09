@@ -14,7 +14,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Width: 15
   Height: 15
-  AllRoomFloorChance: 0.01
-  MixRoomFloorChance: 1
-  RoomFloorChance: 0.333
-  RoomWallChance: 0.333
