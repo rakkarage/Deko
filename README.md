@@ -9,9 +9,12 @@ art: benmhenry@gmail.com
 
 ## Todo
 
+- test list of scriptableobjects in reorderableInspector
+  - why it not work for weighted?
 - torch animation!?
   - need to set AnimationTiles instead of RandomTile
 - test torch random start time!?
+  - test flip torch
 - new way to do light? set one sets all!?
 - chance to not flip or rotate!?
 - custom icon and preview for RandomTile etc?

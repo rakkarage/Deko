@@ -6,14 +6,7 @@ namespace ca.HenrySoftware.Deko
 	[ExecuteInEditMode]
 	public class Map : MonoBehaviour
 	{
-		public WeightedGenerator Generators;
-		private Generator _generator;
-		private bool _mixRoomFloor;
-		private bool _allRoomFloor;
-		public WeightedTheme Themes;
-		private Theme _theme;
-		public WeightedLightTile LightTiles;
-		private LightTile _lightTile;
+		public Config Config;
 		public Tilemap BackMap;
 		public Tilemap WaterBackMap;
 		public Tilemap ItemBackMap;
@@ -36,28 +29,28 @@ namespace ca.HenrySoftware.Deko
 			(x >= 0 + edge) && (y >= 0 + edge) && (x < Width - edge) && (y < Height - edge);
 		public bool IsFloorSimple(int x, int y) => IsFloorSimple(new Vector3Int(x, y, 0));
 		public bool IsFloorSimple(Vector2Int p) => IsFloorSimple(p.Vector3Int());
-		public bool IsFloorSimple(Vector3Int p) => BackMap.GetTile(p) == _theme.FloorSimple;
+		public bool IsFloorSimple(Vector3Int p) => BackMap.GetTile(p) == Config.Theme.FloorSimple;
 		public void SetFloorSimple(int x, int y) => SetFloorSimple(new Vector3Int(x, y, 0));
 		public void SetFloorSimple(Vector2Int p) => SetFloorSimple(p.Vector3Int());
-		public void SetFloorSimple(Vector3Int p) => BackMap.SetTile(p, _theme.FloorSimple);
+		public void SetFloorSimple(Vector3Int p) => BackMap.SetTile(p, Config.Theme.FloorSimple);
 		public bool IsFloorRoom(int x, int y) => IsFloorRoom(new Vector3Int(x, y, 0));
 		public bool IsFloorRoom(Vector2Int p) => IsFloorRoom(p.Vector3Int());
-		public bool IsFloorRoom(Vector3Int p) => BackMap.GetTile(p) == _theme.FloorRoom;
+		public bool IsFloorRoom(Vector3Int p) => BackMap.GetTile(p) == Config.Theme.FloorRoom;
 		public void SetFloorRoom(int x, int y) => SetFloorRoom(new Vector3Int(x, y, 0));
 		public void SetFloorRoom(Vector2Int p) => SetFloorRoom(p.Vector3Int());
-		public void SetFloorRoom(Vector3Int p) => BackMap.SetTile(p, _theme.FloorRoom);
+		public void SetFloorRoom(Vector3Int p) => BackMap.SetTile(p, Config.Theme.FloorRoom);
 		public bool IsFloor(int x, int y) => IsFloor(new Vector3Int(x, y, 0));
 		public bool IsFloor(Vector2Int p) => IsFloor(p.Vector3Int());
 		public bool IsFloor(Vector3Int p)
 		{
 			var tile = BackMap.GetTile(p);
-			return tile == _theme.FloorSimple || tile == _theme.FloorRoom;
+			return tile == Config.Theme.FloorSimple || tile == Config.Theme.FloorRoom;
 		}
 		public void SetFloor(int x, int y) => SetFloor(new Vector3Int(x, y, 0));
 		public void SetFloor(Vector2Int p) => SetFloor(p.Vector3Int());
 		public void SetFloor(Vector3Int p)
 		{
-			if (_allRoomFloor || (_mixRoomFloor && Utility.Random.NextPercent(_generator.RoomFloorChance)))
+			if (Config.AllRoomFloor || (Config.MixRoomFloor && Config.RoomFloor))
 				SetFloorRoom(p);
 			else
 				SetFloorSimple(p);
@@ -67,52 +60,50 @@ namespace ca.HenrySoftware.Deko
 		public bool IsWall(Vector3Int p)
 		{
 			var tile = ForeMap.GetTile(p);
-			return tile != null && (tile == _theme.WallSimple || tile == _theme.WallRoom || tile == _theme.Torch);
+			return tile != null && (tile == Config.Theme.WallSimple ||
+				tile == Config.Theme.WallRoom || tile == Config.Theme.Torch);
 		}
 		public void SetWall(int x, int y) => SetWall(new Vector3Int(x, y, 0));
 		public void SetWall(Vector2Int p) => SetWall(p.Vector3Int());
 		public void SetWall(Vector3Int p)
 		{
-			if (Utility.Random.NextPercent(_generator.RoomWallChance))
+			if (Config.RoomWall)
 			{
-				// todo: store torch chance setting somewhere good
-				//  a global GeneratorConfig
-				// todo: flip torch???
-				if (Utility.Random.NextPercent(.5))
-					ForeMap.SetTile(p, _theme.Torch);
+				if (Config.WallTorch)
+					ForeMap.SetTile(p, Config.Theme.Torch);
 				else
-					ForeMap.SetTile(p, _theme.WallRoom);
+					ForeMap.SetTile(p, Config.Theme.WallRoom);
 			}
 			else
 				SetWallSimple(p);
 		}
 		public void SetWallSimple(int x, int y) => SetWallSimple(new Vector3Int(x, y, 0));
 		public void SetWallSimple(Vector2Int p) => SetWallSimple(p.Vector3Int());
-		public void SetWallSimple(Vector3Int p) => ForeMap.SetTile(p, _theme.WallSimple);
+		public void SetWallSimple(Vector3Int p) => ForeMap.SetTile(p, Config.Theme.WallSimple);
 		public bool IsStairs(int x, int y) => IsStairs(new Vector3Int(x, y, 0));
 		public bool IsStairs(Vector2Int p) => IsStairs(p.Vector3Int());
 		public bool IsStairs(Vector3Int p) => IsStairsUp(p) || IsStairsDown(p);
 		public bool IsStairsUp(int x, int y) => IsStairsUp(new Vector3Int(x, y, 0));
 		public bool IsStairsUp(Vector2Int p) => IsStairsUp(p.Vector3Int());
-		public bool IsStairsUp(Vector3Int p) => ForeMap.GetTile(p) == _theme.StairUp;
+		public bool IsStairsUp(Vector3Int p) => ForeMap.GetTile(p) == Config.Theme.StairUp;
 		public bool IsStairsDown(int x, int y) => IsStairsDown(new Vector3Int(x, y, 0));
 		public bool IsStairsDown(Vector2Int p) => IsStairsDown(p.Vector3Int());
-		public bool IsStairsDown(Vector3Int p) => ForeMap.GetTile(p) == _theme.StairDown;
+		public bool IsStairsDown(Vector3Int p) => ForeMap.GetTile(p) == Config.Theme.StairDown;
 		public bool IsDoor(int x, int y) => IsDoor(new Vector3Int(x, y, 0));
 		public bool IsDoor(Vector2Int p) => IsDoor(p.Vector3Int());
 		public bool IsDoor(Vector3Int p) => IsDoorOpen(p) || IsDoorShut(p);
 		public bool IsDoorOpen(int x, int y) => IsDoorOpen(new Vector3Int(x, y, 0));
 		public bool IsDoorOpen(Vector2Int p) => IsDoorOpen(p.Vector3Int());
-		public bool IsDoorOpen(Vector3Int p) => ForeMap.GetTile(p) == _theme.DoorOpen;
+		public bool IsDoorOpen(Vector3Int p) => ForeMap.GetTile(p) == Config.Theme.DoorOpen;
 		public bool IsDoorShut(int x, int y) => IsDoorShut(new Vector3Int(x, y, 0));
 		public bool IsDoorShut(Vector2Int p) => IsDoorShut(p.Vector3Int());
-		public bool IsDoorShut(Vector3Int p) => ForeMap.GetTile(p) == _theme.DoorShut;
+		public bool IsDoorShut(Vector3Int p) => ForeMap.GetTile(p) == Config.Theme.DoorShut;
 		public void ToggleDoor(Vector3Int p)
 		{
 			if (IsDoorShut(p))
-				ForeMap.SetTile(p, _theme.DoorOpen);
+				ForeMap.SetTile(p, Config.Theme.DoorOpen);
 			else if (IsDoorOpen(p))
-				ForeMap.SetTile(p, _theme.DoorShut);
+				ForeMap.SetTile(p, Config.Theme.DoorShut);
 		}
 		public bool IsBlocked(int x, int y) => IsBlocked(new Vector3Int(x, y, 0));
 		public bool IsBlocked(Vector2Int p) => IsBlocked(p.Vector3Int());
@@ -185,17 +176,17 @@ namespace ca.HenrySoftware.Deko
 		}
 		public void Dark()
 		{
-			foreach (var p in Bounds.allPositionsWithin)
-				LightMap.SetTile(p, _lightTile);
+			// foreach (var p in Bounds.allPositionsWithin)
+			// 	LightMap.SetTile(p, _lightTile);
 		}
 		private void Darken()
 		{
-			foreach (var p in Bounds.allPositionsWithin)
-			{
-				var tile = LightMap.GetTile(p) as LightTile;
-				if (tile != null && tile.Level != _lightMin)
-					tile.Level = _lightExplored;
-			}
+			// foreach (var p in Bounds.allPositionsWithin)
+			// {
+			// 	var tile = LightMap.GetTile(p) as LightTile;
+			// 	if (tile != null && tile.Level != _lightMin)
+			// 		tile.Level = _lightExplored;
+			// }
 		}
 		private static int[,] _fovOctants =
 		{
@@ -299,34 +290,31 @@ namespace ca.HenrySoftware.Deko
 		public void Generate()
 		{
 			Clear();
-			for (var y = 0; y < _generator.Height; y++)
+			var width = Config.Generator.Width;
+			var height = Config.Generator.Height;
+			for (var y = 0; y < height; y++)
 			{
-				for (var x = 0; x < _generator.Width; x++)
+				for (var x = 0; x < width; x++)
 				{
 					var p = new Vector3Int(x, y, 0);
-					LightMap.SetTile(p, _lightTile);
+					// LightMap.SetTile(p, _lightTile);
 					SetFloor(p);
-					if (x == 0 || x == _generator.Width - 1 ||
-						y == 0 || y == _generator.Height - 1)
+					if (x == 0 || x == width - 1 || y == 0 || y == height - 1)
 						SetWall(p);
 				}
 			}
 			BackMap.RefreshAllTiles();
 			ForeMap.RefreshAllTiles();
-			LightMap.RefreshAllTiles();
+			// LightMap.RefreshAllTiles();
 		}
 		[ContextMenu("Clear")]
 		public void Clear()
 		{
-			_generator = Generators.Next;
-			_mixRoomFloor = Utility.Random.NextPercent(_generator.MixRoomFloorChance);
-			_allRoomFloor = Utility.Random.NextPercent(_generator.AllRoomFloorChance);
-			_theme = Themes.Next;
-			_lightTile = LightTiles.Next;
+			Config.Roll();
 			foreach (var i in _layers)
 			{
 				i.ClearAllTiles();
-				i.size = new Vector3Int(_generator.Width, _generator.Height, 1);
+				i.size = new Vector3Int(Config.Generator.Width, Config.Generator.Height, 1);
 				i.ResizeBounds();
 				i.RefreshAllTiles();
 			}
@@ -334,9 +322,8 @@ namespace ca.HenrySoftware.Deko
 		private List<Vector3Int> _torches = new List<Vector3Int>();
 		public void FindTorches()
 		{
-			if (_theme == null) return;
 			foreach (var p in ForeMap.cellBounds.allPositionsWithin)
-				if (ForeMap.GetTile(p) == _theme.Torch)
+				if (ForeMap.GetTile(p) == Config.Theme.Torch)
 					_torches.Add(p);
 		}
 		private int RandomTorchRadius => Utility.Random.Next(TorchRadius) + 1;

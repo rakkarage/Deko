@@ -17,7 +17,7 @@ namespace ca.HenrySoftware.Deko
 			public static float NextFloat(float max) => (float)NextDouble(max);
 			public static float NextFloat(float min, float max) => (float)NextDouble(min, max);
 			public static bool NextBool() => NextDouble() > 0.5;
-			public static bool NextPercent(double target) => NextDouble() < target;
+			public static bool NextPercent(float target) => NextDouble() < target;
 			public static Color NextColor() => new Color(NextFloat(), NextFloat(), NextFloat());
 		}
 	}
