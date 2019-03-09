@@ -156,37 +156,32 @@ namespace ca.HenrySoftware.Deko
 		public bool IsLight(Vector2Int p) => IsLight(p.Vector3Int());
 		public bool IsLight(Vector3Int p)
 		{
-			var tile = LightMap.GetTile(p) as LightTile;
-			return tile != null && tile.Level > _lightExplored;
+			return Config.LightTheme.IndexOf(LightMap.GetTile(p)) > _lightExplored;
 		}
 		public bool IsLightExplored(int x, int y) => IsLightExplored(new Vector3Int(x, y, 0));
 		public bool IsLightExplored(Vector2Int p) => IsLightExplored(p.Vector3Int());
 		public bool IsLightExplored(Vector3Int p)
 		{
-			var tile = LightMap.GetTile(p) as LightTile;
-			return tile != null && tile.Level == _lightExplored;
+			return Config.LightTheme.IndexOf(LightMap.GetTile(p)) == _lightExplored;
 		}
 		public void SetLight(int x, int y, int index, bool test) => SetLight(new Vector3Int(x, y, 0), index, test);
 		public void SetLight(Vector2Int p, int index, bool test) => SetLight(p.Vector3Int(), index, test);
 		public void SetLight(Vector3Int p, int index, bool test)
 		{
-			var tile = LightMap.GetTile(p) as LightTile;
-			if (tile != null && (!test || (index > tile.Level)))
-				tile.Level = index;
+			var existing = Config.LightTheme.IndexOf(LightMap.GetTile(p));
+			if (!test || (index > existing))
+				LightMap.SetTile(p, Config.LightTheme[index]);
 		}
-		public void Dark()
+		public void Dark(int index = _lightMax)
 		{
 			foreach (var p in Bounds.allPositionsWithin)
-				LightMap.SetTile(p, Config.LightTile);
+				SetLight(p, index, false);
 		}
 		private void Darken()
 		{
 			foreach (var p in Bounds.allPositionsWithin)
-			{
-				var tile = LightMap.GetTile(p) as LightTile;
-				if (tile != null && tile.Level != _lightMin)
-					tile.Level = _lightExplored;
-			}
+				if (Config.LightTheme.IndexOf(LightMap.GetTile(p)) != _lightMin)
+					SetLight(p, _lightExplored, false);
 		}
 		private static int[,] _fovOctants =
 		{
@@ -297,7 +292,7 @@ namespace ca.HenrySoftware.Deko
 				for (var x = 0; x < width; x++)
 				{
 					var p = new Vector3Int(x, y, 0);
-					LightMap.SetTile(p, Config.LightTile);
+					LightMap.SetTile(p, Config.LightTheme[_lightExplored]);
 					SetFloor(p);
 					if (x == 0 || x == width - 1 || y == 0 || y == height - 1)
 						SetWall(p);

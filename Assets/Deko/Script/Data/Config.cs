@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 namespace ca.HenrySoftware.Deko
 {
 	[CreateAssetMenu]
@@ -6,10 +8,10 @@ namespace ca.HenrySoftware.Deko
 	{
 		public WeightedTheme Themes;
 		public Theme Theme;
+		public WeightedLightTheme LightThemes;
+		public List<TileBase> LightTheme;
 		public WeightedGenerator Generators;
 		public Generator Generator;
-		public WeightedLightTile LightTiles;
-		public LightTile LightTile;
 		[Range(0, 1)]
 		public float AllRoomFloorChance = .1f;
 		public bool AllRoomFloor;
@@ -29,8 +31,8 @@ namespace ca.HenrySoftware.Deko
 		public void Roll()
 		{
 			Theme = Themes.Next;
+			LightTheme = LightThemes.Next;
 			Generator = Generators.Next;
-			LightTile = LightTiles.Next;
 			MixRoomFloor = Utility.Random.NextPercent(MixRoomFloorChance);
 			AllRoomFloor = Utility.Random.NextPercent(AllRoomFloorChance);
 		}
