@@ -14,7 +14,9 @@ namespace ca.HenrySoftware.Deko
 		{
 			_t = transform;
 			_animator = GetComponent<Animator>();
-			Manager.Map.Dark();
+		}
+		public void Start()
+		{
 			Manager.Map.Light(Position);
 		}
 		public Vector3Int Position => new Vector3Int((int)_t.localPosition.x, (int)_t.localPosition.y, 0);

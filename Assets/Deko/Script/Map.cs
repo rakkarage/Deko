@@ -172,11 +172,6 @@ namespace ca.HenrySoftware.Deko
 			if (!test || (index > existing))
 				LightMap.SetTile(p, Config.LightTheme.LightTiles[index]);
 		}
-		public void Dark(int index = _lightMax)
-		{
-			foreach (var p in Bounds.allPositionsWithin)
-				SetLight(p, index, false);
-		}
 		private void Darken()
 		{
 			foreach (var p in Bounds.allPositionsWithin)
@@ -278,8 +273,6 @@ namespace ca.HenrySoftware.Deko
 			_layers.Add(ItemForeMap);
 			_layers.Add(LightMap);
 			Generate();
-			FindTorches();
-			LightTorches();
 		}
 		[ContextMenu("Generate")]
 		public void Generate()
@@ -294,6 +287,8 @@ namespace ca.HenrySoftware.Deko
 				if (p.x == 0 || p.x == width - 1 || p.y == 0 || p.y == height - 1)
 					SetWall(p);
 			}
+			FindTorches();
+			LightTorches();
 			BackMap.RefreshAllTiles();
 			ForeMap.RefreshAllTiles();
 			LightMap.RefreshAllTiles();
