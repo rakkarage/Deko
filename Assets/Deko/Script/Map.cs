@@ -297,7 +297,7 @@ namespace ca.HenrySoftware.Deko
 				for (var x = 0; x < width; x++)
 				{
 					var p = new Vector3Int(x, y, 0);
-					// LightMap.SetTile(p, _lightTile);
+					LightMap.SetTile(p, Config.LightTile);
 					SetFloor(p);
 					if (x == 0 || x == width - 1 || y == 0 || y == height - 1)
 						SetWall(p);
@@ -305,7 +305,7 @@ namespace ca.HenrySoftware.Deko
 			}
 			BackMap.RefreshAllTiles();
 			ForeMap.RefreshAllTiles();
-			// LightMap.RefreshAllTiles();
+			LightMap.RefreshAllTiles();
 		}
 		[ContextMenu("Clear")]
 		public void Clear()
