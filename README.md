@@ -9,6 +9,8 @@ art: benmhenry@gmail.com
 
 ## Todo
 
+- mob light after generate in play mode?
+- path finding not work after generate! need rebuild thing
 - chance to not flip or rotate!!!
 - custom icon and preview for RandomTile etc?
 - test drag snap

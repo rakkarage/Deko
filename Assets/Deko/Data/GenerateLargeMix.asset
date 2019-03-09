@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 495c86cfbcc30dddf9cdf0cd8b95d5a7, type: 3}
   m_Name: GenerateLargeMix
   m_EditorClassIdentifier: 
-  Width: 15
-  Height: 15
+  WidthFixed: 16
+  WidthAdd: {x: 1, y: 16}
+  HeightFixed: 16
+  HeightAdd: {x: 1, y: 16}

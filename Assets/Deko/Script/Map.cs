@@ -14,7 +14,7 @@ namespace ca.HenrySoftware.Deko
 		public Tilemap ForeMap;
 		public Tilemap ItemForeMap;
 		public Tilemap LightMap;
-		public BoundsInt Bounds => BackMap.cellBounds;
+		public BoundsInt Bounds => LightMap.cellBounds;
 		public int Height => Bounds.size.y;
 		public int Width => Bounds.size.x;
 		public int TileIndex(Vector3Int p) => TileIndex(p.x, p.y);
@@ -278,13 +278,13 @@ namespace ca.HenrySoftware.Deko
 		public void Generate()
 		{
 			Clear();
-			var width = Config.Generator.Width;
-			var height = Config.Generator.Height;
+			var maxx = Bounds.size.x;
+			var maxy = Bounds.size.y;
 			foreach (var p in Bounds.allPositionsWithin)
 			{
 				SetLight(p, _lightMin, false);
 				SetFloor(p);
-				if (p.x == 0 || p.x == width - 1 || p.y == 0 || p.y == height - 1)
+				if (p.x == 0 || p.x == maxx - 1 || p.y == 0 || p.y == maxy - 1)
 					SetWall(p);
 			}
 			FindTorches();
@@ -297,10 +297,11 @@ namespace ca.HenrySoftware.Deko
 		public void Clear()
 		{
 			Config.Roll();
+			var p = new Vector3Int(Config.Generator.Width, Config.Generator.Height, 1);
 			foreach (var i in _layers)
 			{
 				i.ClearAllTiles();
-				i.size = new Vector3Int(Config.Generator.Width, Config.Generator.Height, 1);
+				i.size = p;
 				i.ResizeBounds();
 				i.RefreshAllTiles();
 			}
