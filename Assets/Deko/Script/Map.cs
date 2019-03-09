@@ -287,16 +287,12 @@ namespace ca.HenrySoftware.Deko
 			Clear();
 			var width = Config.Generator.Width;
 			var height = Config.Generator.Height;
-			for (var y = 0; y < height; y++)
+			foreach (var p in Bounds.allPositionsWithin)
 			{
-				for (var x = 0; x < width; x++)
-				{
-					var p = new Vector3Int(x, y, 0);
-					LightMap.SetTile(p, Config.LightTheme.LightTiles[_lightExplored]);
-					SetFloor(p);
-					if (x == 0 || x == width - 1 || y == 0 || y == height - 1)
-						SetWall(p);
-				}
+				SetLight(p, _lightMin, false);
+				SetFloor(p);
+				if (p.x == 0 || p.x == width - 1 || p.y == 0 || p.y == height - 1)
+					SetWall(p);
 			}
 			BackMap.RefreshAllTiles();
 			ForeMap.RefreshAllTiles();
