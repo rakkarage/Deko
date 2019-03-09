@@ -44,7 +44,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: ab3ca020c7743ab418ea69f4e5555d39, type: 2}
     - {fileID: 11400000, guid: 4a18e45cb4258c708bf576df3e5ace36, type: 2}
     Weights: 
-  Theme: 
+  Theme: {fileID: 0}
   Generators:
     Items:
     - {fileID: 11400000, guid: 4fa4f9b94a6b84f98a1a48f75504316c, type: 2}
@@ -52,7 +52,14 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 08145f051c98cf5c3a1399adb922ecf2, type: 2}
     - {fileID: 11400000, guid: 067793ff99c8975c28f9fb3fe8ddda7e, type: 2}
     Weights: 
-  Generator: 
+  Generator: {fileID: 0}
+  LightTiles:
+    Items:
+    - {fileID: 11400000, guid: 211546154ada73d39b81e045cd59547d, type: 2}
+    - {fileID: 11400000, guid: 63449bf29a9ab3916a1e2cbe634b170b, type: 2}
+    - {fileID: 11400000, guid: 89b45370de0060de3a76b389c278b2b1, type: 2}
+    Weights: 
+  LightTile: {fileID: 0}
   AllRoomFloorChance: 0.1
   AllRoomFloor: 0
   MixRoomFloorChance: 0.1

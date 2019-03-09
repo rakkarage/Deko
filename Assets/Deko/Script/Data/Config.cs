@@ -8,7 +8,8 @@ namespace ca.HenrySoftware.Deko
 		public Theme Theme;
 		public WeightedGenerator Generators;
 		public Generator Generator;
-		// public WeightedLightTile LightTile;
+		public WeightedLightTile LightTiles;
+		public LightTile LightTile;
 		[Range(0, 1)]
 		public float AllRoomFloorChance = .01f;
 		public bool AllRoomFloor;
@@ -29,6 +30,7 @@ namespace ca.HenrySoftware.Deko
 		{
 			Theme = Themes.Next;
 			Generator = Generators.Next;
+			LightTile = LightTiles.Next;
 			MixRoomFloor = Utility.Random.NextPercent(MixRoomFloorChance);
 			AllRoomFloor = Utility.Random.NextPercent(AllRoomFloorChance);
 		}

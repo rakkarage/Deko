@@ -176,17 +176,17 @@ namespace ca.HenrySoftware.Deko
 		}
 		public void Dark()
 		{
-			// foreach (var p in Bounds.allPositionsWithin)
-			// 	LightMap.SetTile(p, _lightTile);
+			foreach (var p in Bounds.allPositionsWithin)
+				LightMap.SetTile(p, Config.LightTile);
 		}
 		private void Darken()
 		{
-			// foreach (var p in Bounds.allPositionsWithin)
-			// {
-			// 	var tile = LightMap.GetTile(p) as LightTile;
-			// 	if (tile != null && tile.Level != _lightMin)
-			// 		tile.Level = _lightExplored;
-			// }
+			foreach (var p in Bounds.allPositionsWithin)
+			{
+				var tile = LightMap.GetTile(p) as LightTile;
+				if (tile != null && tile.Level != _lightMin)
+					tile.Level = _lightExplored;
+			}
 		}
 		private static int[,] _fovOctants =
 		{
