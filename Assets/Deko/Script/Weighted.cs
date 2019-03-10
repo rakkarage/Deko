@@ -16,7 +16,7 @@ namespace ca.HenrySoftware.Deko
 	[Serializable]
 	public class WeightedGenerator : Weighted<Generator> { }
 	[Serializable]
-	public class Weighted<T>
+	public abstract class Weighted<T>
 	{
 		public T[] Items;
 		public int[] Weights;
