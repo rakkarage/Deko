@@ -4,6 +4,7 @@ namespace UnityEngine.Tilemaps
 	[CreateAssetMenu]
 	public class OrientedTile : TileBase
 	{
+		public static bool Apply = true;
 		public TileOrientation Orientation;
 		private bool FlipX => (Orientation & TileOrientation.FlipX) == TileOrientation.FlipX ? Utility.Random.NextBool() : false;
 		private bool FlipY => (Orientation & TileOrientation.FlipY) == TileOrientation.FlipY ? Utility.Random.NextBool() : false;
@@ -13,8 +14,11 @@ namespace UnityEngine.Tilemaps
 			new Vector3(FlipX ? -1f : 1f, FlipY ? -1f : 1f, 1f));
 		public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData)
 		{
-			tileData.flags = TileFlags.LockAll;
-			tileData.transform = NextMatrix;
+			if (Apply)
+			{
+				tileData.flags = TileFlags.LockAll;
+				tileData.transform = NextMatrix;
+			}
 		}
 	}
 }

@@ -19,6 +19,8 @@ namespace ca.HenrySoftware.Deko
 		public float MixRoomFloorChance = .1f;
 		public bool MixRoomFloor;
 		[Range(0, 1)]
+		public float DefaultOrientationChance = .1f;
+		[Range(0, 1)]
 		public float RoomFloorChance = .1f;
 		public bool RoomFloor => Utility.Random.NextPercent(RoomFloorChance);
 		[Range(0, 1)]
@@ -35,6 +37,7 @@ namespace ca.HenrySoftware.Deko
 			Generator = Generators.Next;
 			MixRoomFloor = Utility.Random.NextPercent(MixRoomFloorChance);
 			AllRoomFloor = Utility.Random.NextPercent(AllRoomFloorChance);
+			OrientedTile.Apply = Utility.Random.NextPercent(DefaultOrientationChance);
 		}
 	}
 }
