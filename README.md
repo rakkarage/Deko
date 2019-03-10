@@ -9,6 +9,7 @@ art: benmhenry@gmail.com
 
 ## Todo
 
+- generic minMax
 - mob light after generate in play mode?
   - pass turn to make it happen?
   - events? Generate event?
