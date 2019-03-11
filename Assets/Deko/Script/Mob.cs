@@ -6,93 +6,96 @@ namespace ca.HenrySoftware.Deko
 	[RequireComponent(typeof(Animator))]
 	public class Mob : MonoBehaviour
 	{
-		public List<Vector3Int> Path;
+		public SetVector3Int Path;
 		private Animator _animator;
-		public Manager Manager;
+		// TODO remove
+		// public Manager Manager;
 		private Transform _t;
 		private void Awake()
 		{
 			_t = transform;
 			_animator = GetComponent<Animator>();
 		}
-		public void Start()
-		{
-			Manager.Map.Light(Position);
-		}
+		// public void Start()
+		// {
+		// 	// Manager.Map.Light(Position);
+		// }
 		public Vector3Int Position => new Vector3Int((int)_t.localPosition.x, (int)_t.localPosition.y, 0);
-		public void Turn()
-		{
-			if (Path.Count > 0)
-				StepPath();
-		}
+		// public void Turn()
+		// {
+		// 	if (Path.Count > 0)
+		// 		StepPath();
+		// }
 		public void FindPathTo(Vector3Int p)
 		{
-			var finder = Manager.Finder;
-			finder.Find(Position, p);
-			finder.Draw(true);
-			Path = finder.Path;
+			// TODO: move shared path to scriptable object? right!? ya config?
+			// call it sharedData
+			// var finder = Manager.Finder;
+			// finder.Find(Position, p);
+			// finder.Draw(true);
+			// Path = finder.Path;
 		}
 		public void StepPath()
 		{
-			var map = Manager.Map;
-			var finder = Manager.Finder;
-			if (Path == null || Path.Count == 0)
-				return;
-			if ((Path.Count == 2) && map.IsDoor(Path[Path.Count - 1]) && map.IsDoor(Path[1]))
-			{
-				ToggleDoor(Path[1]);
-				ResetPath();
-			}
-			else if (Path.Count == 1)
-			{
-				map.IsStairs(Path[0]);
-				ResetPath();
-			}
-			else
-			{
-				var delta = Path[1] - Path[0];
-				var direction = Utility.GetDirection(delta.Vector2Int());
-				Face(direction);
-				Walk();
-				Step(direction);
-				var temp = Path[0];
-				Path.RemoveAt(0);
-				finder.RemovePathAt(map.BackMap.GetCellCenterWorld(temp));
-				if ((Path.Count == 2) &&
-				map.IsDoor(Path[Path.Count - 1]) && map.IsDoor(Path[1]))
-				{
-					ToggleDoor(Path[1]);
-					ResetPath();
-				}
-				else if (Path.Count == 1)
-				{
-					map.IsStairs(Path[0]);
-					ResetPath();
-				}
-				else
-				{
-					if (Path.Count > 1)
-						Manager.ResetTurn();
-					else
-						ResetPath();
-				}
-			}
-			map.Light(Position);
+			// var map = Manager.Map;
+			// var finder = Manager.Finder;
+			// if (Path == null || Path.Count == 0)
+			// 	return;
+			// if ((Path.Count == 2) && map.IsDoor(Path[Path.Count - 1]) && map.IsDoor(Path[1]))
+			// {
+			// 	ToggleDoor(Path[1]);
+			// 	ResetPath();
+			// }
+			// else if (Path.Count == 1)
+			// {
+			// 	map.IsStairs(Path[0]);
+			// 	ResetPath();
+			// }
+			// else
+			// {
+			// 	var delta = Path[1] - Path[0];
+			// 	var direction = Utility.GetDirection(delta.Vector2Int());
+			// 	Face(direction);
+			// 	Walk();
+			// 	Step(direction);
+			// 	var temp = Path[0];
+			// 	Path.RemoveAt(0);
+			// 	finder.RemovePathAt(map.BackMap.GetCellCenterWorld(temp));
+			// 	if ((Path.Count == 2) &&
+			// 	map.IsDoor(Path[Path.Count - 1]) && map.IsDoor(Path[1]))
+			// 	{
+			// 		ToggleDoor(Path[1]);
+			// 		ResetPath();
+			// 	}
+			// 	else if (Path.Count == 1)
+			// 	{
+			// 		map.IsStairs(Path[0]);
+			// 		ResetPath();
+			// 	}
+			// 	else
+			// 	{
+			// 		if (Path.Count > 1)
+			// 			Manager.ResetTurn();
+			// 		else
+			// 			ResetPath();
+			// 	}
+			// }
+			// map.Light(Position);
 		}
 		private void ResetPath()
 		{
-			if (Path == null) return;
-			Path.Clear();
-			Path = null;
-			Manager.Finder.RemovePath();
-			Manager.Target.TargetOff();
-			Manager.Target.SetTargetPosition(_t.localPosition, false);
-			Idle();
+			// if (Path == null) return;
+			// Path.Clear();
+			// Path = null;
+			// Manager.Finder.RemovePath();
+			// Manager.Target.TargetOff();
+			// Manager.Target.SetTargetPosition(_t.localPosition, false);
+			// Idle();
 		}
 		private void ToggleDoor(Vector3Int p)
 		{
-			Manager.Map.ToggleDoor(p);
-			Manager.Finder.ReachableFromMain();
+			// Manager.Map.ToggleDoor(p);
+			// Manager.Finder.ReachableFromMain();
 		}
 		[ContextMenu("Attack")]
 		public void Attack()
@@ -178,9 +181,9 @@ namespace ca.HenrySoftware.Deko
 					newY += 1;
 					break;
 			}
-			var map = Manager.Map;
-			if (((newX != oldX) || (newY != oldY)) && map.InsideMap(newX, newY))
-				_t.localPosition = map.BackMap.GetCellCenterWorld(new Vector3Int(newX, newY, 0));
+			// var map = Manager.Map;
+			// if (((newX != oldX) || (newY != oldY)) && map.InsideMap(newX, newY))
+			// 	_t.localPosition = map.BackMap.GetCellCenterWorld(new Vector3Int(newX, newY, 0));
 		}
 	}
 }

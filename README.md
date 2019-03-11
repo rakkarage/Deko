@@ -9,7 +9,8 @@ art: benmhenry@gmail.com
 
 ## Todo
 
-- generic minMax
+- events with parameters
+- move tileIndex!?
 - mob light after generate in play mode?
   - pass turn to make it happen?
   - events? Generate event?

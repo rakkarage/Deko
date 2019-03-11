@@ -13,7 +13,7 @@ namespace ca.HenrySoftware.Deko
 		private PathNode _start;
 		private PathNode _finish;
 		private PathNode _current;
-		public List<Vector3Int> Path = new List<Vector3Int>();
+		public SetVector3Int Path;
 		public int SortingOrder = 1;
 		public Manager Manager;
 		public Map Map;

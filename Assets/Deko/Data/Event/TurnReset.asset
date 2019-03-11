@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 101cccbf26df21e66a96847fe4aa2da6, type: 3}
-  m_Name: Start
+  m_Script: {fileID: 11500000, guid: 9c10ba74f019093b2bbcb619503b3e3e, type: 3}
+  m_Name: TurnReset
   m_EditorClassIdentifier: 
