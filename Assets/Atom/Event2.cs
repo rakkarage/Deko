@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-namespace ca.HenrySoftware.Deko
+namespace ca.HenrySoftware.Atom
 {
 	public abstract class Event2<T1, T2> : ScriptableObject
 	{

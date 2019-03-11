@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-namespace ca.HenrySoftware.Deko
+namespace ca.HenrySoftware.Atom
 {
 	[Serializable]
 	public abstract class Event1<T> : ScriptableObject

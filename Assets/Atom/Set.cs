@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-namespace ca.HenrySoftware.Deko
+namespace ca.HenrySoftware.Atom
 {
 	public abstract class Set<T> : ScriptableObject
 	{

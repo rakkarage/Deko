@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
-namespace ca.HenrySoftware.Deko
+namespace ca.HenrySoftware.Atom
 {
 	public abstract class EventHandler2<T1, T2> : MonoBehaviour
 	{
