@@ -1,16 +1,6 @@
 {
-    "name": "Deko",
-    "references": [
-        "GUID:412e56c90b13edd4a834b7d07919ba88",
-        "GUID:bd9ce81d981bde50aa5b7248ba7a4779"
-    ],
-    "optionalUnityReferences": [],
-    "includePlatforms": [],
-    "excludePlatforms": [],
-    "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
-    "autoReferenced": true,
-    "defineConstraints": [],
-    "versionDefines": []
+	"name": "Deko",
+	"references": [
+		"ReorderableInspector"
+	]
 }
