@@ -9,6 +9,7 @@ art: benmhenry@gmail.com
 
 ## Todo
 
+- fix additive shader!!!
 - events with parameters
 - move tileIndex!?
 - mob light after generate in play mode?
