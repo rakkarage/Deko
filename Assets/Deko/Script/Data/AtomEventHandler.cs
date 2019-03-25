@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
-namespace ca.HenrySoftware.Atom
+namespace ca.HenrySoftware.Deko
 {
 	public class AtomEventHandler : MonoBehaviour
 	{

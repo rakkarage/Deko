@@ -1,5 +1,4 @@
-﻿using ca.HenrySoftware.Atom;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 namespace ca.HenrySoftware.Deko
@@ -7,7 +6,7 @@ namespace ca.HenrySoftware.Deko
 	[RequireComponent(typeof(Animator))]
 	public class Mob : MonoBehaviour
 	{
-		public AtomListVector3Int Path;
+		public PathData Path;
 		private Animator _animator;
 		// TODO remove
 		// public Manager Manager;

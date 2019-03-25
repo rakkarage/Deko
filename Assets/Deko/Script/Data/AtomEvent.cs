@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-namespace ca.HenrySoftware.Atom
+namespace ca.HenrySoftware.Deko
 {
 	public class AtomEvent : ScriptableObject
 	{
