@@ -1098,7 +1098,6 @@ GameObject:
   - component: {fileID: 1843903721}
   - component: {fileID: 1843903723}
   - component: {fileID: 1843903722}
-  - component: {fileID: 1843903724}
   m_Layer: 0
   m_Name: PathFinder
   m_TagString: Untagged
@@ -1150,15 +1149,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Count: 12
   Prefab: {fileID: 173960, guid: f42bb65248d358f49888404a1bf1a6c7, type: 3}
---- !u!114 &1843903724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1843903720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80d6f462b8b6dbe41ba8acd263ff5ede, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
