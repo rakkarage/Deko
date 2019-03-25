@@ -296,7 +296,7 @@ namespace ca.HenrySoftware.Deko
 			BackMap.RefreshAllTiles();
 			ForeMap.RefreshAllTiles();
 			LightMap.RefreshAllTiles();
-			Start.Raise(LightMap.cellBounds);
+			// Start.Raise(LightMap.cellBounds);
 		}
 		[ContextMenu("Clear")]
 		public void Clear()

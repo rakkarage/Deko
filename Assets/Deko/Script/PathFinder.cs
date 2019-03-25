@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ca.HenrySoftware.Atom;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 namespace ca.HenrySoftware.Deko
@@ -13,7 +14,7 @@ namespace ca.HenrySoftware.Deko
 		private PathNode _start;
 		private PathNode _finish;
 		private PathNode _current;
-		public SetVector3Int Path;
+		public AtomListVector3Int Path;
 		public int SortingOrder = 1;
 		public Manager Manager;
 		public Map Map;
