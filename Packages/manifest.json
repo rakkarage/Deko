@@ -1,7 +1,5 @@
 {
 	"dependencies": {
-		"com.henrysoftware.atom": "https://github.com/rakkarage/atom.git",
-		"com.mambojambostudios.unity-atoms": "https://github.com/AdamRamberg/unity-atoms.git#v1.0.0",
 		"com.unity.ads": "2.0.8",
 		"com.unity.analytics": "3.2.2",
 		"com.unity.collab-proxy": "1.2.15",

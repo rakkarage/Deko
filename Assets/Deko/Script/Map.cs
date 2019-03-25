@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using ca.HenrySoftware.Atom;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 namespace ca.HenrySoftware.Deko
@@ -6,7 +7,7 @@ namespace ca.HenrySoftware.Deko
 	[ExecuteInEditMode]
 	public class Map : MonoBehaviour
 	{
-		public EventBoundsInt Start;
+		// public EventBoundsInt Start;
 		public Event Turn;
 		public Config Config;
 		public Tilemap BackMap;
