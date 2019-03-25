@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 namespace ca.HenrySoftware.Deko
 {
+	[CreateAssetMenu]
 	public class AtomEvent : ScriptableObject
 	{
 		private List<AtomEventHandler> Handlers = new List<AtomEventHandler>();
