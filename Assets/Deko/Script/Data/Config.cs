@@ -30,6 +30,17 @@ namespace ca.HenrySoftware.Deko
 		[Range(0, 1)]
 		public float WallTorchChance = .1f;
 		public bool WallTorch => Utility.Random.NextPercent(WallTorchChance);
+
+		[ContextMenu("Reset")]
+		public void Reset()
+		{
+			Theme = null;
+			LightTheme = null;
+			Generator = null;
+			AllRoomFloor = false;
+			MixRoomFloor = false;
+			DefaultOrientation = false;
+		}
 		[ContextMenu("Roll")]
 		public void Roll()
 		{
