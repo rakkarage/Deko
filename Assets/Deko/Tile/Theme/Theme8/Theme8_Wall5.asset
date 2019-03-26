@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: Theme8_Wall5
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -5668384322740043204, guid: 2752d2a453a58ee959134a4e89e0185b,
-    type: 3}
+  m_Sprite: {fileID: 21300050, guid: 2752d2a453a58ee959134a4e89e0185b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

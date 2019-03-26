@@ -6,6 +6,8 @@ namespace ca.HenrySoftware.Deko
 	[ExecuteInEditMode]
 	public class Map : MonoBehaviour
 	{
+		// public EventBoundsInt Start;
+		public Event Turn;
 		public Config Config;
 		public Tilemap BackMap;
 		public Tilemap WaterBackMap;
@@ -17,6 +19,7 @@ namespace ca.HenrySoftware.Deko
 		public BoundsInt Bounds => LightMap.cellBounds;
 		public int Height => Bounds.size.y;
 		public int Width => Bounds.size.x;
+		// TODO: this only used from pathfinder!!! 
 		public int TileIndex(Vector3Int p) => TileIndex(p.x, p.y);
 		public int TileIndex(Vector2Int p) => TileIndex(p.x, p.y);
 		public int TileIndex(int x, int y) => y * Width + x;
@@ -292,6 +295,7 @@ namespace ca.HenrySoftware.Deko
 			BackMap.RefreshAllTiles();
 			ForeMap.RefreshAllTiles();
 			LightMap.RefreshAllTiles();
+			// Start.Raise(LightMap.cellBounds);
 		}
 		[ContextMenu("Clear")]
 		public void Clear()

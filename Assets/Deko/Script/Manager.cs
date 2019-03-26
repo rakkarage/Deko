@@ -8,6 +8,7 @@ namespace ca.HenrySoftware.Deko
 		IPinchHandler, IEndPinchHandler,
 		IBeginDragHandler, IDragHandler, IEndDragHandler
 	{
+		Event Turn;
 		public Camera GameCamera;
 		public float ZoomMin = 1f;
 		public float ZoomMinMin = .8f;
@@ -48,7 +49,7 @@ namespace ca.HenrySoftware.Deko
 				{
 					_turn = false;
 					_totalTurns++;
-					Character.Turn();
+					// Character.Turn();
 					CheckCenter();
 					MiniMap.UpdateMiniMap(Character.transform.localPosition);
 				}

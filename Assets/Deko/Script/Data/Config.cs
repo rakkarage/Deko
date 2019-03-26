@@ -20,6 +20,7 @@ namespace ca.HenrySoftware.Deko
 		public bool MixRoomFloor;
 		[Range(0, 1)]
 		public float DefaultOrientationChance = .1f;
+		public bool DefaultOrientation;
 		[Range(0, 1)]
 		public float RoomFloorChance = .1f;
 		public bool RoomFloor => Utility.Random.NextPercent(RoomFloorChance);
@@ -29,6 +30,17 @@ namespace ca.HenrySoftware.Deko
 		[Range(0, 1)]
 		public float WallTorchChance = .1f;
 		public bool WallTorch => Utility.Random.NextPercent(WallTorchChance);
+
+		[ContextMenu("Reset")]
+		public void Reset()
+		{
+			Theme = null;
+			LightTheme = null;
+			Generator = null;
+			AllRoomFloor = false;
+			MixRoomFloor = false;
+			DefaultOrientation = false;
+		}
 		[ContextMenu("Roll")]
 		public void Roll()
 		{
@@ -37,7 +49,8 @@ namespace ca.HenrySoftware.Deko
 			Generator = Generators.Next;
 			MixRoomFloor = Utility.Random.NextPercent(MixRoomFloorChance);
 			AllRoomFloor = Utility.Random.NextPercent(AllRoomFloorChance);
-			OrientedTile.Apply = Utility.Random.NextPercent(DefaultOrientationChance);
+			DefaultOrientation = Utility.Random.NextPercent(DefaultOrientationChance);
+			OrientedTile.Apply = !DefaultOrientation;
 		}
 	}
 }

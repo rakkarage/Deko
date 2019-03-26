@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: Theme28_FloorRoom2
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -365753336837845796, guid: 269d6c0b540be3c3786742ed4ca33644,
-    type: 3}
+  m_Sprite: {fileID: 21300014, guid: 269d6c0b540be3c3786742ed4ca33644, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

@@ -1,8 +1,7 @@
 using ca.HenrySoftware.Deko;
 namespace UnityEngine.Tilemaps
 {
-	[CreateAssetMenu]
-	public class OrientedTile : TileBase
+	public abstract class OrientedTile : TileBase
 	{
 		public static bool Apply = true;
 		public TileOrientation Orientation;
