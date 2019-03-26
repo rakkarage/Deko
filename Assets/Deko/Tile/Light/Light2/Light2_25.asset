@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: Light2_25
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 5163688955718604396, guid: ddce639a415cc8f0cb8a8446015dbd0e,
-    type: 3}
+  m_Sprite: {fileID: 21300050, guid: ddce639a415cc8f0cb8a8446015dbd0e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

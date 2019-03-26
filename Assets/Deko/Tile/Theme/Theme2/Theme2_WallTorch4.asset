@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: Theme2_WallTorch4
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -1901266728891305733, guid: f5abba0eaac0522079e7b2215be3cb1d,
-    type: 3}
+  m_Sprite: {fileID: 21300040, guid: f5abba0eaac0522079e7b2215be3cb1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

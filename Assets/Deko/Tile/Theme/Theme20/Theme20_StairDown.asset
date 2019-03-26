@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: Theme20_StairDown
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -5017383966255554625, guid: f9f187c66ee021645bb108f0625c9ff3,
-    type: 3}
+  m_Sprite: {fileID: 21300024, guid: f9f187c66ee021645bb108f0625c9ff3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
