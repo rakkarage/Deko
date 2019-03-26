@@ -15,10 +15,10 @@ MonoBehaviour:
   Orientation: -1
   Tiles:
     Items:
-    - {fileID: 11400000, guid: 08d7f1c2fec994fd693b29961b89f918, type: 2}
-    - {fileID: 11400000, guid: ebd53bf0e8017e9609f737910b8926a4, type: 2}
-    - {fileID: 11400000, guid: 770d62c3bc641743b86337497a1a79de, type: 2}
-    - {fileID: 11400000, guid: ff505b8471792cb9d9272e79e88b17d9, type: 2}
-    - {fileID: 11400000, guid: 4cb0b4983d8fde175ac9bc2adf06ad5c, type: 2}
-    - {fileID: 11400000, guid: 37a94dfc820a0082fae6a3f5fb458122, type: 2}
+    - {fileID: 11400000, guid: 1465aa68e41ed33d9bdb69b415a67234, type: 2}
+    - {fileID: 11400000, guid: 93bb96ff352fe41cfa512e8a44af9abb, type: 2}
+    - {fileID: 11400000, guid: f09d3ce4df2ca13fbab0207557ccc7a8, type: 2}
+    - {fileID: 11400000, guid: 0bf52877d37ff441992431a5098c63f5, type: 2}
+    - {fileID: 11400000, guid: 521d75bb0b9b92fe89caee71117a0422, type: 2}
+    - {fileID: 11400000, guid: 55b330ff089420ff89373b86c9e0ab72, type: 2}
     Weights: 0c0000000c0000000c000000060000000100000001000000
