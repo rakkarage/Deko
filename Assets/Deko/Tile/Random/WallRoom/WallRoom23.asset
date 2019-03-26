@@ -14,10 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Orientation: 1
   Tiles:
-    Result: {fileID: 0}
     Items:
-    - {fileID: 11400000, guid: 11ab982a2a583f4f091dbfcdc88be669, type: 2}
-    - {fileID: 11400000, guid: c29f6eb06ea4cd996af1aaa3c2bc4b8b, type: 2}
-    - {fileID: 11400000, guid: de22b06403928b4ecaaa46e37a9d9b7e, type: 2}
-    - {fileID: 11400000, guid: 59eae35753577e5b68011fdaf7ba5f7f, type: 2}
+    - {fileID: 11400000, guid: 1a02489bf41a1e61482e018ba1404900, type: 2}
+    - {fileID: 11400000, guid: cf293a6532f411aeea3eb9bd876b7de6, type: 2}
+    - {fileID: 11400000, guid: 024feb53e7464b73caf101f1e6f110ae, type: 2}
+    - {fileID: 11400000, guid: e10031640a14ebd68ab8ac65e650b771, type: 2}
     Weights: 18000000180000000300000001000000
