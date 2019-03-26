@@ -72,8 +72,6 @@ namespace ca.HenrySoftware.Deko
 		{
 			if (Config.RoomWall)
 			{
-				// todo: just put torch in list with others and skip this shit?
-				// then it can use orientation to flip self
 				if (Config.WallTorch)
 					ForeMap.SetTile(p, Config.Theme.Torch);
 				else
