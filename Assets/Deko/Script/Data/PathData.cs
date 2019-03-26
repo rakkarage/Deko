@@ -11,6 +11,7 @@ namespace ca.HenrySoftware.Deko
 		public bool Contains(Vector3Int p) => Steps.Contains(p);
 		public void Add(Vector3Int p) => Steps.Add(p);
 		public void Reverse() => Steps.Reverse();
+		[ContextMenu("Reset")]
 		public void Clear() => Steps.Clear();
 		public Vector3Int this[int key]
 		{
