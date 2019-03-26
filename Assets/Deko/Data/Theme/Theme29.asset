@@ -15,10 +15,10 @@ MonoBehaviour:
   FloorSimple: {fileID: 11400000, guid: a89ec65b2664b06bd9209b538d27f636, type: 2}
   FloorRoom: {fileID: 11400000, guid: f4607af6f779b0c5cb633cdbd1e6ea12, type: 2}
   StairDown: {fileID: 11400000, guid: e7bf77a0bc8d93d6a8e1efb49c91b651, type: 2}
-  StairUp: {fileID: 0}
-  DoorShut: {fileID: 0}
-  DoorOpen: {fileID: 0}
-  DoorBroke: {fileID: 0}
+  StairUp: {fileID: 11400000, guid: c20b85e992b2d8cff95f3ac8e18bdb5e, type: 2}
+  DoorShut: {fileID: 11400000, guid: 6c798fcccf2dce9bf9c3894f2eda4f48, type: 2}
+  DoorOpen: {fileID: 11400000, guid: 40690dccfe20672f293b2c1160e83bd4, type: 2}
+  DoorBroke: {fileID: 11400000, guid: 778fc06466e5abadc96f3c96cade29cf, type: 2}
   Torch: {fileID: 11400000, guid: a0ee2c4800744a9aca057a9c8eacf766, type: 2}
   WallSimple: {fileID: 11400000, guid: c7c95780a9e5136e2b6567d36e2bbd2e, type: 2}
   WallRoom: {fileID: 11400000, guid: 608c51f089f431e09ab1125ecd0fe717, type: 2}
