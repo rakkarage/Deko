@@ -17,7 +17,7 @@ art: benmhenry@gmail.com
   - events? Generate event?
 - path finding not work after generate! need rebuild thing
 - custom icon and preview for RandomTile etc?
-- test drag snap
+- test drag snap (.5!?)
 - generate levels
 - save & load? (odin serializer? not working on linux?)
 - mobs

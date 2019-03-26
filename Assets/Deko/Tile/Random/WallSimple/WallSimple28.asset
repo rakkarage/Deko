@@ -14,5 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Orientation: 1
   Tiles:
-    Items: []
+    Items:
+    - {fileID: 11400000, guid: 2b68e2b7fc2324c2b84a2ff467144d94, type: 2}
+    - {fileID: 11400000, guid: 908f24633313151d88c015946a50be8f, type: 2}
+    - {fileID: 11400000, guid: 1de673fdf21afffb28f9099b532a3981, type: 2}
+    - {fileID: 11400000, guid: 2f9f27763cd202eae9bba067c27e7f6f, type: 2}
     Weights: 
