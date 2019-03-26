@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Orientation: 1
   Sprites:
-  - {fileID: -8296622164665827404, guid: ff24905d4f17bbae2bb066696c6b4f6c, type: 3}
-  - {fileID: -2888784178581112041, guid: ff24905d4f17bbae2bb066696c6b4f6c, type: 3}
-  - {fileID: 8038167127012859192, guid: ff24905d4f17bbae2bb066696c6b4f6c, type: 3}
-  - {fileID: -1901266728891305733, guid: ff24905d4f17bbae2bb066696c6b4f6c, type: 3}
+  - {fileID: 21300034, guid: ff24905d4f17bbae2bb066696c6b4f6c, type: 3}
+  - {fileID: 21300036, guid: ff24905d4f17bbae2bb066696c6b4f6c, type: 3}
+  - {fileID: 21300038, guid: ff24905d4f17bbae2bb066696c6b4f6c, type: 3}
+  - {fileID: 21300040, guid: ff24905d4f17bbae2bb066696c6b4f6c, type: 3}
   RandomStartTime: 1
   Speed: {x: 1, y: 1}
