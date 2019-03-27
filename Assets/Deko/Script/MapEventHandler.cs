@@ -3,7 +3,7 @@ namespace ca.HenrySoftware.Deko
 {
 	[ExecuteInEditMode]
 	[RequireComponent(typeof(Map))]
-	public class MapEventHandler : MonoBehaviour
+	public class MapEventHandler : AtomEventHandler
 	{
 		public CharacterData Character;
 		private Map _map;
