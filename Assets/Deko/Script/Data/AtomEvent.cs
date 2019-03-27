@@ -12,7 +12,7 @@ namespace ca.HenrySoftware.Deko
 		[ContextMenu("Raise")]
 		public void Raise()
 		{
-			for (var i = Handlers.Count - 1; i > 0; i--)
+			for (var i = Handlers.Count - 1; i >= 0; i--)
 				Handlers[i].Invoke();
 		}
 	}
