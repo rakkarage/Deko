@@ -6,7 +6,7 @@ namespace ca.HenrySoftware.Deko
 	[ExecuteInEditMode]
 	public class Map : MonoBehaviour
 	{
-		// public EventBoundsInt Start;
+		public AtomEvent Start;
 		public Event Turn;
 		public Config Config;
 		public Tilemap BackMap;
@@ -295,7 +295,7 @@ namespace ca.HenrySoftware.Deko
 			BackMap.RefreshAllTiles();
 			ForeMap.RefreshAllTiles();
 			LightMap.RefreshAllTiles();
-			// Start.Raise(LightMap.cellBounds);
+			Start.Raise();
 		}
 		[ContextMenu("Clear")]
 		public void Clear()

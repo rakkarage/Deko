@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 495c86cfbcc30dddf9cdf0cd8b95d5a7, type: 3}
   m_Name: GenerateSmall
   m_EditorClassIdentifier: 
-  Width: 10
-  Height: 10
+  WidthFixed: 8
+  WidthAdd: {x: 1, y: 16}
+  HeightFixed: 8
+  HeightAdd: {x: 1, y: 16}
